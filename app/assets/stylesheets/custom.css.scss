@@ -1,0 +1,67 @@
+$brown: #a68863;
+$orange: #ff4e24;
+$pink: #ff18fb;
+$yellow: #f9ff50;
+$peach: #fecfa7;
+
+header {
+  img {
+    max-height: 150px;
+    width: auto;
+  }
+}
+
+
+@media(min-width: 769px) {
+  .navbar-nav {
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+    border-left: 1px solid $pink;
+    border-right: 1px solid $orange;
+    }
+
+.navbar-default .navbar-nav > li > a {
+
+  border-left: 1px solid $orange;
+  border-right: 1px solid $pink;
+
+}
+.navbar-default .navbar-nav > li > a:first-child {
+  border-left: 1px solid $orange 1px solid $pink
+}
+.navbar-default .navbar-nav > li.active > a{
+  font-size: 125%;
+  color: $orange;
+}
+.navbar-default .navbar-nav > li.active > a:hover{
+  color: $orange;
+}
+}
+
+
+.navbar-default .navbar-nav > li > a:hover {
+  background: $yellow;
+}
+
+
+.navbar-nav > li > a {
+line-height: 0 
+}
+
+
+
+nav.visible-xs {
+  background: $pink;
+  .navbar-brand {color: black}
+  .navbar-toggle {
+    background-color: yellow;
+  }
+  .navbar-toggle:hover {
+    background-color: $peach;
+  }
+   & li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+}

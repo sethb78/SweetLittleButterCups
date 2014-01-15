@@ -1,12 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Kristine</title>
+ <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+<header>
+  <div class="row">
+    <div class="col-md-12 text-center">
+    <%= image_tag('logo.png', alt: "Sweet Little Buttercups", class: "text-center") %>
+    </div>
+  </div>
+<nav class="navbar navbar-default text-center hidden-xs" role="navigation">
+
+
+  <ul class="nav navbar-nav">
+    <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Cakes</a></li>
+    <li><a href="#">Cookies/Cupcakes</a></li>
+    <li><a href="#">Other Pastries</a></li>
+
+    <li><a href="#">Party Favors</a></li>
+   <!--  <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Cakes</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Cupcakes</a></li>
+        <li><a href="#">Separated link</a></li>
+        <li><a href="#">One more separated link</a></li>
+      </ul>
+    </li> -->
+        <li><a href="#">About Me</a></li>
+
+    <li><a href="#">FAQ</a></li>
+
+  </ul>
+</nav>
+
+<nav class="navbar navbar-default visible-xs" role="navigation">
+  <!-- Brand and toggle get grouped for better mobile display -->
+  <div class="navbar-header">
+      <a class="navbar-brand" href="#">MENU</a>
+
+    <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+     <li><a href="#">Cakes</a></li>
+    <li><a href="#">Cookies/Cupcakes</a></li>
+    <li><a href="#">Other Pastries</a></li>
+
+    <li><a href="#">Party Favors</a></li>
+   <!--  <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Cakes</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Cupcakes</a></li>
+        <li><a href="#">Separated link</a></li>
+        <li><a href="#">One more separated link</a></li>
+      </ul>
+    </li> -->
+        <li><a href="#">About Me</a></li>
+
+    <li><a href="#">FAQ</a></li>
+      </li>
+    </ul>
+
+
+  </div><!-- /.navbar-collapse -->
+</nav>
+
+</header>
+
 
 <%= yield %>
 
