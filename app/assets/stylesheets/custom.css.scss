@@ -4,64 +4,234 @@ $pink: #ff18fb;
 $yellow: #f9ff50;
 $peach: #fecfa7;
 
+@mixin radial_gradient {
+background: rgb(249,255,80); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(249,255,80,1) 0%, rgba(251,255,131,1) 40%, rgba(251,255,131,1) 60%, rgba(249,255,80,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,255,80,1)), color-stop(40%,rgba(251,255,131,1)), color-stop(60%,rgba(251,255,131,1)), color-stop(100%,rgba(249,255,80,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ff50', endColorstr='#f9ff50',GradientType=0 ); /* IE6-9 */
+
+}
+
+html {
+}
 header {
+  // padding-bottom: 20px;
   img {
-    max-height: 150px;
-    width: auto;
+    height: 150px;
+    width:auto;
+    max-width: 200px;;
   }
 }
 
 
-@media(min-width: 769px) {
-  .navbar-nav {
-    display: inline-block;
-    float: none;
-    margin: 0 auto;
-    border-left: 1px solid $pink;
-    border-right: 1px solid $orange;
-    }
-
-.navbar-default .navbar-nav > li > a {
-
-  border-left: 1px solid $orange;
-  border-right: 1px solid $pink;
-
-}
-.navbar-default .navbar-nav > li > a:first-child {
-  border-left: 1px solid $orange 1px solid $pink
-}
-.navbar-default .navbar-nav > li.active > a{
-  font-size: 125%;
-  color: $orange;
-}
-.navbar-default .navbar-nav > li.active > a:hover{
-  color: $orange;
-}
-}
 
 
-.navbar-default .navbar-nav > li > a:hover {
-  background: $yellow;
-}
-
+// Universal navbar 
 
 .navbar-nav > li > a {
-line-height: 0 
+  line-height: auto;
+  font-family: "poiret one";
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 
 
+
+//Expanded navbar
+//
+  @media(min-width: 769px) {
+    header {
+            background: url('texture5.png'), whitesmoke;
+            background-size: cover;
+
+    }
+    .navbar {
+      margin-top: 0;
+      margin-bottom: 0;
+           background-image: url('texture.png');
+
+background-repeat:repeat-x;
+    }
+  .navbar-nav {
+    display: block;
+    float: none;
+    margin: 0 10% 0 0;
+    width: 90%;
+
+    opacity: 1;
+
+         
+
+  
+    // border-left: 1px solid $pink;
+    // border-right: 1px solid $orange;
+  }
+  // .navbar-default .navbar-nav > li > a {
+  //   border-left: 1px solid $orange;
+  //   border-right: 1px solid $pink;
+
+  // }
+  // .navbar-default .navbar-nav > li > a:first-child {
+  //   border-left: 1px solid $orange 1px solid $pink
+  // }
+  .navbar-nav li { 
+    width: 14.285714286%;
+    display: table-cell;
+    height: 50px;
+    vertical-align: middle;
+    border-radius: 0 0 35px 35px;
+    // border-right: 2px solid black;
+    // border-left: 1px solid grey;
+    box-shadow: 1px 1px 4px 1px black;
+    overflow: hidden;
+    a {
+      display: table-cell;
+      height: 50px;
+      vertical-align: middle;
+      width: inherit;
+      text-align: center;
+
+      font-size: 125%;
+    }
+  }
+  // .navbar-default .navbar-nav > li { padding: 0 15px;}
+  .navbar-default .navbar-nav > li.active, .navbar-default .navbar-nav > li:hover {
+    font-size: 125%;
+    text-decoration: underline;
+    font-variant: small-caps;
+
+
+  }
+  .navbar-nav li:nth-child(2) {background-color: $brown}
+  .navbar-nav li:nth-child(1) {background-color: $yellow; border-left: none;}
+  .navbar-nav li:nth-child(3) {background-color: $orange}
+    .navbar-nav li:nth-child(4) {background-color: $peach}
+        .navbar-nav li:nth-child(5) {background-color: $pink}
+        .navbar-nav li:nth-child(6) {background-color: $yellow}
+
+          .navbar-nav li:last-child {background-color: $brown}
+
+
+
+}
+
+
+
+
+
+// Collapsed Navbar
 nav.visible-xs {
-  background: $pink;
-  .navbar-brand {color: black}
-  .navbar-toggle {
-    background-color: yellow;
+      header {
+            background: url('texture5.png'), whitesmoke;
+            background-size: cover;
+
+    }
+  .navbar-brand, .pull-none { 
+    float: none; 
+    padding-left: 5px;}
+  .navbar-brand {color: black;}
+  .navbar-toggle, .navbar-collapse {
+    background-color: $yellow;
   }
   .navbar-toggle:hover {
-    background-color: $peach;
+    background-color: lighten($yellow, 10%);
   }
    & li > a {
     padding-top: 10px;
     padding-bottom: 10px;
+  }
+  .navbar-toggle .icon-bar {
+    margin-left: 3px;
+  }
+   .navbar-nav > li > a:hover,  .navbar-nav > li.active > a{
+    text-decoration: underline;
+    font-variant: small-caps;
+  }
+  .navbar-default .navbar-toggle .icon-bar {
+    color: $yellow
+  }
+  li > a {
+    padding-left: 25px;
+  }
 }
+
+// Carousel 
+.carousel {
+  width: 100%;
+  background: $brown;
+  position: relative;
+}
+.carousel-caption {
+  // background: black;
+  // opacity: .8;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // width: 800px;
+  // margin: 0 auto;
+  // padding-bottom: 60px;
+  display: none;
+}
+.wrapper {
+  width: 75%;
+  overflow: hidden;
+  background: $brown;
+  margin: 0 auto;
+}
+.carousel-inner > .item > img, .carousel-inner > .item > a > img {
+  width: 800px;
+  height: 500px;
+  display: block;
+  position: relative;
+  margin: 0 auto;
+  box-shadow: 1px 1px 10px 1px black;
+}
+ol.carousel-indicators {
+  text-align: right;
+  left: 0;
+  width: 700px;
+  margin: -40px auto 0;
+  position: relative;
+  height: 100px;
+  li {
+    width: 100%;
+    height: 100px;
+    border-radius: 0;
+    border: none;
+    background: $brown;
+  }
+  img {
+    border: 4px solid white;
+    height: 100px;
+    margin: 0 auto;
+    opacity: .75;
+    width: 100%;
+    box-shadow: 1px 1px 10px 1px black;
+    &:hover {
+      background-color: $yellow;
+    }
+  }
+  li:hover img {
+    margin: 0;
+  }
+  .active img {
+    opacity: 1;
+  }
+}
+@media(max-width: 768px) {
+  .wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: $brown;
+  margin: 0 auto;
+}
+  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
+    width: 100%;
+    height: 400px;
+  }
 }

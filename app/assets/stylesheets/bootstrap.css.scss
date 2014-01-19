@@ -3807,7 +3807,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .nav > li > a {
   position: relative;
   display: block;
-  padding: 0 20px;
+  // padding:20px;
 }
 
 .nav > li > a:hover,
@@ -4230,9 +4230,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
+  line-height: 1;
 }
 
 @media (max-width: 767px) {
@@ -4267,8 +4265,8 @@ textarea.input-group-sm > .input-group-btn > .btn {
     float: left;
   }
   .navbar-nav > li > a {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    // padding-top: 15px;
+    // padding-bottom: 15px;
   }
 }
 
@@ -6141,12 +6139,7 @@ body.modal-open,
   border-radius: 10px;
 }
 
-.carousel-indicators .active {
-  width: 12px;
-  height: 12px;
-  margin: 0;
-  background-color: #ffffff;
-}
+
 
 .carousel-caption {
   position: absolute;
