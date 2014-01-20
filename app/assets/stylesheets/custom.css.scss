@@ -4,7 +4,7 @@ $pink: #ff18fb;
 $yellow: #f9ff50;
 $peach: #fecfa7;
 
-@mixin radial_gradient {
+@mixin radial_gradient($main_color: $yellow){
 background: rgb(249,255,80); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(249,255,80,1) 0%, rgba(251,255,131,1) 40%, rgba(251,255,131,1) 60%, rgba(249,255,80,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,255,80,1)), color-stop(40%,rgba(251,255,131,1)), color-stop(60%,rgba(251,255,131,1)), color-stop(100%,rgba(249,255,80,1))); /* Chrome,Safari4+ */
@@ -13,25 +13,37 @@ background: -o-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 4
 background: -ms-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* IE10+ */
 background: linear-gradient(to bottom,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ff50', endColorstr='#f9ff50',GradientType=0 ); /* IE6-9 */
+}
+
+.background-yellow { background-color: $yellow }
+.background-orange { background-color: $orange }
+.background-pink { background-color: $pink }
+.background-peach { background-color: $peach }
+
+.main-body {
+  border-left: 2px solid $brown;
+  border-right: 2px solid $brown;
+  min-height: 900px;
+}
+.horizontal-break {
+  margin-top: -12.5px;
+  .col-md-3 { 
+  
+    height: 25px;
+ }
+}
+header img {
+  height: 200px;
+  width: 300px;
+  background: seashell;
+  border-radius:  25px;
+  box-shadow: inset -3px -3px 5px 1px #333;
+  margin-bottom: 6px;
+  margin-top: 6px;
 
 }
 
-html {
-}
-header {
-  // padding-bottom: 20px;
-  img {
-    height: 150px;
-    width:auto;
-    max-width: 200px;;
-  }
-}
-
-
-
-
-// Universal navbar 
-
+// Universal navbar styles
 .navbar-nav > li > a {
   line-height: auto;
   font-family: "poiret one";
@@ -39,54 +51,34 @@ header {
   font-size: 1.2em;
 }
 
+// Non-mobile navbar
+@media(min-width: 769px) {
+  header {
+    background: url('texture5.png'), $brown;
+    background-size: cover;
+    box-shadow: 0 1px 2px 1px #333333;
+    z-index: 9999;
 
-
-
-//Expanded navbar
-//
-  @media(min-width: 769px) {
-    header {
-            background: url('texture5.png'), whitesmoke;
-            background-size: cover;
-
-    }
-    .navbar {
-      margin-top: 0;
-      margin-bottom: 0;
-           background-image: url('texture.png');
-
-background-repeat:repeat-x;
+  }
+  .navbar {
+    margin-top: 0;
+    margin-bottom: 0;
+    background-image: url('texture.png');
+    background-repeat:repeat-x;
     }
   .navbar-nav {
     display: block;
     float: none;
     margin: 0 10% 0 0;
     width: 90%;
-
     opacity: 1;
-
-         
-
-  
-    // border-left: 1px solid $pink;
-    // border-right: 1px solid $orange;
   }
-  // .navbar-default .navbar-nav > li > a {
-  //   border-left: 1px solid $orange;
-  //   border-right: 1px solid $pink;
-
-  // }
-  // .navbar-default .navbar-nav > li > a:first-child {
-  //   border-left: 1px solid $orange 1px solid $pink
-  // }
   .navbar-nav li { 
     width: 14.285714286%;
     display: table-cell;
     height: 50px;
     vertical-align: middle;
     border-radius: 0 0 35px 35px;
-    // border-right: 2px solid black;
-    // border-left: 1px solid grey;
     box-shadow: 1px 1px 4px 1px black;
     overflow: hidden;
     a {
@@ -99,65 +91,52 @@ background-repeat:repeat-x;
       font-size: 125%;
     }
   }
-  // .navbar-default .navbar-nav > li { padding: 0 15px;}
-  .navbar-default .navbar-nav > li.active, .navbar-default .navbar-nav > li:hover {
-    font-size: 125%;
-    text-decoration: underline;
-    font-variant: small-caps;
-
-
+  .navbar-default .navbar-nav > li.active, 
+  .navbar-default .navbar-nav > li.active a, 
+  .navbar-default .navbar-nav > li:hover, 
+  .navbar-default .navbar-nav > li:hover a {
+    height: 100px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
   }
-  .navbar-nav li:nth-child(2) {background-color: $brown}
+
+
+  .navbar-nav li:nth-child(2) {background-color: $peach}
   .navbar-nav li:nth-child(1) {background-color: $yellow; border-left: none;}
   .navbar-nav li:nth-child(3) {background-color: $orange}
-    .navbar-nav li:nth-child(4) {background-color: $peach}
-        .navbar-nav li:nth-child(5) {background-color: $pink}
-        .navbar-nav li:nth-child(6) {background-color: $yellow}
-
-          .navbar-nav li:last-child {background-color: $brown}
-
-
-
+  .navbar-nav li:nth-child(4) {background-color: $pink}
+  .navbar-nav li:nth-child(5) {background-color: $yellow}
+  .navbar-nav li:nth-child(6) {background-color: $peach}
+  .navbar-nav li:last-child {background-color: $orange}
 }
-
-
-
 
 
 // Collapsed Navbar
 nav.visible-xs {
-      header {
-            background: url('texture5.png'), whitesmoke;
-            background-size: cover;
-
-    }
+  header {
+    background: url('texture5.png'), whitesmoke;
+    background-size: cover;
+  }
   .navbar-brand, .pull-none { 
     float: none; 
     padding-left: 5px;}
-  .navbar-brand {color: black;}
-  .navbar-toggle, .navbar-collapse {
-    background-color: $yellow;
-  }
-  .navbar-toggle:hover {
-    background-color: lighten($yellow, 10%);
-  }
+  .navbar-brand { color: black }
+  .navbar-toggle, .navbar-collapse { background-color: $yellow }
+  .navbar-toggle:hover { background-color: lighten($yellow, 10%) }
    & li > a {
     padding-top: 10px;
     padding-bottom: 10px;
   }
-  .navbar-toggle .icon-bar {
-    margin-left: 3px;
-  }
+  .navbar-toggle .icon-bar { margin-left: 3px }
    .navbar-nav > li > a:hover,  .navbar-nav > li.active > a{
     text-decoration: underline;
     font-variant: small-caps;
   }
-  .navbar-default .navbar-toggle .icon-bar {
-    color: $yellow
-  }
-  li > a {
-    padding-left: 25px;
-  }
+  .navbar-default .navbar-toggle .icon-bar { color: $yellow }
+  li > a { padding-left: 25px }
 }
 
 // Carousel 
@@ -165,6 +144,10 @@ nav.visible-xs {
   width: 100%;
   background: $brown;
   position: relative;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  z-index: -9;
+  overflow: visible;
 }
 .carousel-caption {
   // background: black;
@@ -216,22 +199,107 @@ ol.carousel-indicators {
       background-color: $yellow;
     }
   }
-  li:hover img {
-    margin: 0;
-  }
-  .active img {
-    opacity: 1;
-  }
+  li:hover img { margin: 0 }
+  .active img { opacity: 1 }
 }
 @media(max-width: 768px) {
   .wrapper {
-  width: 100%;
-  overflow: hidden;
-  background: $brown;
-  margin: 0 auto;
-}
+    width: 100%;
+    overflow: hidden;
+    background: $brown;
+    margin: 0 auto;
+  }
   .carousel-inner > .item > img, .carousel-inner > .item > a > img {
     width: 100%;
     height: 400px;
+  }
+}
+.carousel.carousel-fade .item {
+  -webkit-transition: opacity  1s ease-in-out;
+  -moz-transition: opacity 1ss ease-in-out;
+  -ms-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+}
+.carousel.carousel-fade .active.left,
+.carousel.carousel-fade .active.right {
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+// End of carousel
+
+
+// Features Row
+.features-row {
+  margin-top: 40px;
+  .col-md-4 {
+        height: 250px;
+  }
+
+  .clip-art { 
+    margin: 0 auto;
+    height: 75px;
+    width: 75px;
+  }
+  h1 {
+    margin: 0 auto;
+    padding: 0;
+  font-family: "poiret one";
+
+  }
+}
+  @media(min-width: 769px){
+    .features-row
+  .col-md-4:nth-child(2) {
+
+    border-left: 1px dashed $brown;
+     border-right: 1px dashed $brown;
+  }
+}
+// /End of features row
+
+
+
+.scrolling_quote {
+  margin-top: 10px;
+  display: none;
+  position: relative;
+  text-align: justify;
+  background-color: $peach;
+  display: block;
+  overflow: visible;
+
+  margin-bottom:0;
+  font-style: italic;
+
+
+.titlebox{
+  float:left;
+  padding:0 10px;
+  margin: -40px 0 0 20px;
+font-family: "poiret one";
+  background: $yellow;
+  font-size: 24px;
+  font-weight: 900;
+  color: $pink;
+  border-radius: 10px 10px 0 0;
+  display: none;
+}
+  .quotes {
+    display: none;
+    padding: 0 5%;
+    height: 100px;
+    position: relative;
+    margin-top: 20px;
+  }
+  .source {
+    text-align: right;
+    font-style: none;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
   }
 }

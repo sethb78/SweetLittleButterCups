@@ -10,12 +10,18 @@
 </head>
 <body>
 <header>
-<%= render 'layouts/header' %>
+  <%= render 'layouts/header' %>
 
 </header>
+<% if params[:action] == "home" %>
 
+<%= render 'layouts/carousel' %>
 
+<%= render 'layouts/horizontal_break' %>
+<% end %>
+
+<div class="container main-body">
 <%= yield %>
-
+</div>
 </body>
 </html>
