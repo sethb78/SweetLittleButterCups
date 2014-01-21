@@ -20,9 +20,13 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ff50', end
 .background-pink { background-color: $pink }
 .background-peach { background-color: $peach }
 
+h1 {
+  font-family: 'poiret one';
+  font-weight: 900
+}
 .main-body {
-  border-left: 2px solid $brown;
-  border-right: 2px solid $brown;
+  // border-left: 2px solid $brown;
+  // border-right: 2px solid $brown;
   min-height: 900px;
 }
 .horizontal-break {
@@ -32,9 +36,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ff50', end
     height: 25px;
  }
 }
-header img {
-  height: 200px;
-  width: 300px;
+header img, footer img{
+  height: 100%;
+  width: 90%;
+  max-width: 300px;
   background: seashell;
   border-radius:  25px;
   box-shadow: inset -3px -3px 5px 1px #333;
@@ -42,6 +47,9 @@ header img {
   margin-top: 6px;
 
 }
+
+
+
 
 // Universal navbar styles
 .navbar-nav > li > a {
@@ -52,8 +60,8 @@ header img {
 }
 
 // Non-mobile navbar
-@media(min-width: 769px) {
-  header {
+@media(min-width: 768px) {
+  header, footer {
     background: url('texture5.png'), $brown;
     background-size: cover;
     box-shadow: 0 1px 2px 1px #333333;
@@ -112,6 +120,13 @@ header img {
   .navbar-nav li:nth-child(6) {background-color: $peach}
   .navbar-nav li:last-child {background-color: $orange}
 }
+  @media (min-width: 769px) and (max-width: 1170px) { 
+    .navbar li > a {
+      font-size: 100%;
+    }
+   }
+  
+
 
 
 // Collapsed Navbar
@@ -245,9 +260,48 @@ ol.carousel-indicators {
   }
   h1 {
     margin: 0 auto;
-    padding: 0;
+    padding: 0 0 5px;
   font-family: "poiret one";
+  font-weight: bold;
+  }
+  ul {
+    list-style: none;
+    li {
+      list-style: none;
+      margin: 10px 0;
 
+      span {
+bottom:2px;
+  left:2%;
+  position:relative;
+    font-family: "spinnaker";
+    font-size: 1.5em;
+
+      }
+
+    }
+
+  }
+  .col-md-4:first-child {
+    .features-row-header { background-color: $yellow}
+    ul li i { color: $yellow }
+  }
+
+  .col-md-4:nth-child(2) {
+    .features-row-header { background-color: $orange }
+    ul li i { color: $orange }
+  }
+
+  .col-md-4:last-child {
+    .features-row-header { background-color: $pink }
+    ul li i { color: $pink }
+  }
+  i { text-shadow: 0px 2px 1px black }
+  .features-row-header {
+    width: 70%;
+    margin: 0 auto 20px;
+    border-radius: 50% 50% 0 0;
+  box-shadow: 0 1px 1px 1px #333
   }
 }
   @media(min-width: 769px){
@@ -258,18 +312,31 @@ ol.carousel-indicators {
      border-right: 1px dashed $brown;
   }
 }
+@media(max-width: 768px){
+  .features-row ul {width: 70%;
+    margin: 0 auto;}
+}
+@media(min-width: 769px) and (max-width: 1100px) {
+  .features-row ul, .features-row .features-row-header {
+    width: 100%;
+    padding: 0;
+  }
+}
 // /End of features row
 
 
 
 .scrolling_quote {
-  margin-top: 10px;
+  margin-top: 50px;
   display: none;
   position: relative;
   text-align: justify;
-  background-color: $peach;
+  background-color: $brown;
+  color: white;
   display: block;
   overflow: visible;
+  border-top: 4px ridge #333;
+  border-bottom: 4px ridge #333;
 
   margin-bottom:0;
   font-style: italic;
@@ -302,4 +369,73 @@ font-family: "poiret one";
     bottom: 0;
     right: 20px;
   }
+}
+
+.about-me-row {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 0 2.5%;
+  h1 { font-size: 36px;
+    margin-bottom: 5px}
+  img { 
+    width: 25%;
+    height: auto;
+    margin: 0 auto 10px;
+    border-radius: 25px;
+  }
+
+  .col-md-6:last-child{ margin-top: 75px }
+  .form-group {
+    height: 30px;
+    .col-md-4, .col-lg-2 { 
+      text-align: right;
+      padding-right: 0;
+    }
+    label[for="inputtimetocall"] {
+      line-height: 1;
+
+    }
+    #date_hour, #date_minute {
+     margin-top: 3px;
+      padding: 2px 0;}
+  }
+  .btn { background-color: yellow;
+    color: black;
+    box-shadow: 2px 2px 4px 2px black;
+    &:hover {
+      background-color: black;
+      color: yellow;
+    }
+  }
+}
+
+@media(max-width: 1100px) {
+  .about-me-row {
+    .form-group {
+      height: 50px;
+      label {
+        float: left;
+      }
+    }
+        label[for="inputtimetocall"] {
+    margin-top:  5px;
+  }
+    #date_hour, #date_minute {
+    margin-left: 10px;
+  }
+    .col-md-6 {
+    padding: 0 5%;
+  }
+  }
+
+}
+@media(min-width: 769px) and (max-width: 1170px) {
+    .col-md-6 {
+    padding: 0 2%;
+  }
+}
+
+footer {
+      background: url('texture5.png'), $brown;
+
 }

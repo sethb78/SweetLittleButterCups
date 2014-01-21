@@ -1,37 +1,10 @@
 
-
-<div class="container features-row">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="row">
-        <%= image_tag('nicubunu_Chocolate_birthday_cake.svg', class: 'img-responsive clip-art') %>
-      </div>  
-      <div class="row">
-        <h1 class="text-center">BAKED GOODS</h1>
-      </div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="row">
-      <%= image_tag('ryanlerch_Artwork_-_paintbrush_scissors_and_glue.svg', class: 'img-responsive clip-art') %>
-    </div>  
-    <div class="row">
-    <h1 class="text-center">CRAFTS</h1>
-</div>
-    </div>
-
-    <div class="col-md-4">
-      <div class="row">
-      <%= image_tag('party_04.gif', class: 'img-responsive clip-art') %>
-    </div>  
-    <div class="row">
-    <h1 class="text-center">PARTY PLANNING</h1>
-</div>
-    </div>
-
-
-  </div>
-</div>
-
-
+<section>
+<%= render 'features_row' %>
+</section>
+<section>
 <%= render 'scrolling_quotes' %>
+</section>
+<section>
+<%= render 'about_me_row' %>
+</section>
