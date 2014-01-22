@@ -1,79 +1,88 @@
-  <div class="row">
-    <div class="col-md-4 col-sm-3 text-center  hidden-xs">
+<!-- Logo -->
+<div class="row">
+  <div class="col-md-4 col-sm-3 text-center  hidden-xs">
     <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
-    </div>
-<div class="col-md-8 col-sm-9">
-
-<nav class="navbar navbar-default text-center hidden-xs" role="navigation">
-
-
-  <ul class="nav navbar-nav">
-    <li class="active"><a href="#">Home</a></li>
+  </div>
+<!-- /Logo -->
+  
+<!-- Desktop Navbar -->
+  <div class="col-md-8 col-sm-9">
+    <nav class="navbar navbar-default text-center hidden-xs" role="navigation">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Cakes</a></li>
-    <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
-    <li><a href="#">Other<br />Pastries</a></li>
-
-    <li><a href="#">Party Favors</a></li>
-   <!--  <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
-      <ul class="dropdown-menu">
-        <li><a href="#">Cakes</a></li>
-        <li><a href="#">Cookies</a></li>
-        <li><a href="#">Cupcakes</a></li>
-        <li><a href="#">Separated link</a></li>
-        <li><a href="#">One more separated link</a></li>
-      </ul>
-    </li> -->
+        <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
+        <li><a href="#">Other<br />Pastries</a></li>
+        <li><a href="#">Party Favors</a></li>
+        <!--  <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Cakes</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Cupcakes</a></li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
         <li><a href="#">About Me</a></li>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </nav>
+<!-- /Desktop Navbar -->
 
-    <li><a href="#">FAQ</a></li>
-
-  </ul>
-</nav>
-</div>
-<nav class="navbar navbar-default visible-xs" role="navigation">
-
-
-    <div class="col-sm-12 text-center  ">
-    <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
+<!-- Header contact info and button -->
+    <div class=" header-contact col-md-6 col-md-offset-1 text-center hidden-xs">
+      <%= render 'layouts/contact_header' %>
     </div>
-  <!-- Brand and toggle get grouped for better mobile display -->
-  <div class="navbar-header text-center">
-      <a class="navbar-brand " href="#">MENU</a>
-
-    <button type="button" class="navbar-toggle pull-none" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
+<!-- /Header contact info and button -->
   </div>
 
-  <!-- Collect the nav links, forms, and other content for toggling -->
-  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-    <ul class="nav navbar-nav">
-      <li class="active"><a href="#">Home</a></li>
-     <li><a href="#">Cakes</a></li>
-    <li><a href="#">Cookies/Cupcakes</a></li>
-    <li><a href="#">Other Pastries</a></li>
+<!-- Mobile  -->
+  <nav class="navbar navbar-default visible-xs" role="navigation">
+<!-- Logo -->
+    <div class="col-sm-12 text-center">
+      <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
+    </div>
 
-    <li><a href="#">Party Favors</a></li>
-   <!--  <li class="dropdown">
-      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
-      <ul class="dropdown-menu">
+<!-- Header contact info & button -->
+    <div class="col-sm-12 header-contact text-center ">
+      <%= render 'layouts/contact_header' %>
+    </div>
+
+<!-- Navbar -->
+    <div class="navbar-header text-center">
+      <a class="navbar-brand " href="#">MENU</a>
+      <button type="button" class="navbar-toggle pull-none" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+<!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
         <li><a href="#">Cakes</a></li>
-        <li><a href="#">Cookies</a></li>
-        <li><a href="#">Cupcakes</a></li>
-        <li><a href="#">Separated link</a></li>
-        <li><a href="#">One more separated link</a></li>
-      </ul>
-    </li> -->
+        <li><a href="#">Cookies/Cupcakes</a></li>
+        <li><a href="#">Other Pastries</a></li>
+        <li><a href="#">Party Favors</a></li>
+        <!--  <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Cakes</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Cupcakes</a></li>
+            <li><a href="#">Separated link</a></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li> -->
         <li><a href="#">About Me</a></li>
-
-    <li><a href="#">FAQ</a></li>
-      </li>
-    </ul>
+        <li><a href="#">FAQ</a></li>
+      </ul>
+    </div>
+<!-- /Navbar -->
+  </nav>
+<!-- /Mobile -->
 </div>
-
-  </div><!-- /.navbar-collapse -->
-</nav>

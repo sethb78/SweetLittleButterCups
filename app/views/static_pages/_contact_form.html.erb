@@ -1,0 +1,43 @@
+<%= form_tag(nil, role: "form") do %> <!--  form_tag(url_for_options = {}, options = {}, &block) public -->
+
+  <div class="form-group">
+    <div class="col-md-4 col-lg-2">
+      <%= label_tag("inputName", "Name") %> <!--  label_tag(name = nil, content_or_options = nil, options = nil, &block) public -->  
+    </div>
+    <div class="col-md-8 col-lg-8">   
+      <%= email_field_tag(nil, nil, class: "form-control", id: "inputEmail", placeholder: "Name") %> <!--  email_field_tag(name, value = nil, options = {}) public -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-lg-2">
+      <%= label_tag("inputemail", "Email") %> <!--  label_tag(name = nil, content_or_options = nil, options = nil, &block) public -->
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <%= field_set_tag(nil,  class: "form-control", id: "inputemail", placeholder: "Email") %> <!-- password_field_tag(name = "password", value = nil, options = {}) public -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-lg-2">
+      <%= label_tag("inputphone", "Phone") %> <!--  label_tag(name = nil, content_or_options = nil, options = nil, &block) public -->
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <%= field_set_tag(nil,  class: "form-control", id: "inputphone", placeholder: "Phone") %> <!-- password_field_tag(name = "password", value = nil, options = {}) public -->
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-lg-4">
+      <%= label_tag("inputtimetocall", "Best Time To Call After:") %> <!--  label_tag(name = nil, content_or_options = nil, options = nil, &block) public -->
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <%= select_hour(nil, ampm: true) %>    </div>
+    </div>
+  </div>
+
+  <div class="form-group text-center">
+    <%= button_tag "Submit", name: nil, class: "btn btn-default"%> <!--button_tag(content_or_options = nil, options = nil, &block) public -->
+  </div>
+
+<% end %>
