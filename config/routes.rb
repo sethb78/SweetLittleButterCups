@@ -1,9 +1,10 @@
 Kristine::Application.routes.draw do
 
+  resources :messages
 
 match '/faq', to: 'static_pages#faq', via: 'get'
-  match '/contact', to: 'static_pages#contact', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
+  match '/contact', to: 'messages#new', via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,37 @@
+<%= provide(:title, 'Contact Us') %>
+<div class="contact-us-page page">
+<div class="row">
+<div class="col-md-8  contact-page-text">
+<div class="jumbo-font" class="text-center">LET'S TALK</div>
+<div class="large-font">PLANNING A PARTY?</div>
+<div class="large-font">NEED A TASTY GIFT?</div>
+<div class="large-font">LOOKING FOR THAT SPECIAL FAVOR?</div>
+<p>
+ 
+  In order to ensure <strong>100% CUSTOMER SATISFACTION</strong> we would like to get to know you and what you are looking for.  Have an idea?  We will do everything we can to make your dream a reality.  Not sure what you are looking for?  With our years of experience we will have plenty of ideas and suggestions to get yo started in the right direction.  We use only the freshest ingredients and higest quality products.  You can give us a call at <strong>(555)555-5555</strong> or send us a message with any relevant informatin ane wee will be in touch.  We look forward to talking to you.
+</p>
+</div>
+
+<div class="col-md-4 contact-form">
+
+<%= form_for @message do |f| %>
+  <% if @message.errors.any? %>
+    <div class="error_messages">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being sent:</h2>
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+            <%= render 'fields', f: f %>
+  <div class="form-group text-center">
+       <%= f.submit "Talk To Us", class: "btn btn-default btn-primary" %>
+
+  </div>
+<% end %>
+</div>
+</div>
+</div>

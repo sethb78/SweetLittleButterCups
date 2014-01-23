@@ -9,8 +9,9 @@
   <div class="col-md-8 col-sm-9">
     <nav class="navbar navbar-default text-center hidden-xs" role="navigation">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Cakes</a></li>
+        <li><%= link_to "Home", root_path %></li>
+
+        <li>    <%= link_to "Cakes", "#" %></li>
         <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
         <li><a href="#">Other<br />Pastries</a></li>
         <li><a href="#">Party Favors</a></li>
@@ -25,7 +26,7 @@
           </ul>
         </li> -->
         <li><a href="#">About Me</a></li>
-        <li><a href="#">FAQ</a></li>
+        <li>    <%= link_to "Contact Us", contact_path %></li>
       </ul>
     </nav>
 <!-- /Desktop Navbar -->

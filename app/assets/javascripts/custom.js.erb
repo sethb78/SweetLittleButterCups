@@ -28,4 +28,7 @@ $('.scrolling_quote').css({"display": "block"})
 
     showNextQuote();
 
+    $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
+    
+  $("#phone").mask("(999) 999-9999");
 })
