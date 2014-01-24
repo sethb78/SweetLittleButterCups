@@ -1,20 +1,21 @@
-  <div class="row <% if params[:action] == "home" %>gradient <% else %> opaque-peach  <% end %>">
+<div class="row ">
+  
   <div class= "col-md-4 text-center hidden-xs">
-  <h5>Visit Our Friends At:</h5>
-  <address>
-  <strong>Mulberry Market</strong><br>
-  <small>30 New Jersey Rte.34</small><br>
-  <small>Colts Neck, NJ 07722</small><br>
-  <small><abbr title="Phone">P:</abbr> (732) 683-0202</small>
-</address>
-
-
+    <h5>Visit Our Friends At:</h5>
+    <address>
+      <strong>Mulberry Market</strong><br>
+      <small>30 New Jersey Rte.34</small><br>
+      <small>Colts Neck, NJ 07722</small><br>
+      <small><abbr title="Phone">P:</abbr> (732) 683-0202</small>
+    </address>
   </div>
-    <div class="col-md-4 text-center  ">
+  
+  <div class="col-md-4 text-center  ">
     <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
-    </div>
+  </div>
 
   <div class="col-md-4 text-center web-designer">
-  <strong> Site Designed By: <%= mail_to("sethaltshuler@gmail.com", "Seth B. Atshuler") %></strong>
+    <strong> Site Designed By: <%= mail_to("sethaltshuler@gmail.com", "Seth B. Atshuler") %></strong>
   </div>
-  </div>
+  
+</div>

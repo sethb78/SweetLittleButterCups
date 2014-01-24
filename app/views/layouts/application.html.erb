@@ -11,25 +11,23 @@
 
 </head>
 <body>
+
 <header>
   <%= render 'layouts/header' %>
-
 </header>
+
 <% if params[:action] == "home" %>
-
-<%= render 'layouts/carousel' %>
-
+  <%= render 'layouts/carousel' %>
 <% end %>
-    <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
-      <% end %>
-
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
+<% end %>
 
 <%= yield %>
-
 
 <footer>
   <%= render 'layouts/footer' %>
 </footer>
+
 </body>
 </html>

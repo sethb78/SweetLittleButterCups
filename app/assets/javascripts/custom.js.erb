@@ -7,14 +7,13 @@ $(document).ready(function(){
   }, function() {
     $( this ).parent('li').removeClass( "hover" );
   })
-
-
+/* /Function adds hover background and radius to link's parent li. */
 
 
 $('#carousel').carousel();
 
+/* Scrolling quotes */
 $('.scrolling_quote').css({"display": "block"})
-
     var quotes = $(".quotes");
     var quoteIndex = -1;
 
@@ -25,10 +24,15 @@ $('.scrolling_quote').css({"display": "block"})
             .delay('5000')
             .fadeOut(1000, showNextQuote);
     }
-
     showNextQuote();
+/* /Scrolling quotes */
 
+/* Add active class to navbar */
     $('a[href="' + this.location.pathname + '"]').parent().addClass('active');
-    
+/* /Add active class to navbar */
+
+/* Format for phone number on contact form */
   $("#phone").mask("(999) 999-9999");
+/* /Format for phone number on contact form */
+
 })

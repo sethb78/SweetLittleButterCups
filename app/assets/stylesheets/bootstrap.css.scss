@@ -6142,15 +6142,11 @@ body.modal-open,
 
 
 .carousel-caption {
-  position: absolute;
-  right: 15%;
-  bottom: 20px;
-  left: 15%;
-  z-index: 10;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  color: #ffffff;
-  text-align: center;
+  width: 500px;
+  padding: 50px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #333;
 }
 
 .carousel-caption .btn {

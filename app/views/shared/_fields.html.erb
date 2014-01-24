@@ -1,0 +1,25 @@
+<div class="form-group">
+  <%= f.label :name %><br />
+  <%= f.text_field :name, class: "form-control " %>
+</div>
+
+<div class="form-group">
+  <%= f.label :email %>
+  <%= f.email_field :email, class: "form-control" %>
+</div>
+
+<div class="form-group <% if params[:action] == "home" %>col-md-3 telephone <% end %>">
+  <%= f.label :phone %>
+  <%= f.telephone_field :phone, class: "form-control", id: "phone" %>
+</div>
+
+<div class="form-group <% if params[:action] == 'home' %>col-md-8 col-md-offset-1 best-time<% end %>">
+  <%= f.label :best_time, "Best Time To Call After:" %>&nbsp;&nbsp;
+  <%= f.select :best_time, [ 
+      ["8am", 8], ["9am", 9], ["10am", 10], ["11am", 11], ["12pm", 12], ["1pm", 13], ["2pm", 14], ["3pm", 15], ["4pm", 16], ["5pm", 17], ["6pm", 18], ["7pm", 19], ["8pm", 20], ["9pm", 21], ["10pm", 22]], class: "form-control"  %>
+</div>
+<div class="clearfix"></div>
+<div class="form-group">
+  <%= f.label :content %>
+  <%= f.text_area :content, :rows => "15",  class: "form-control" %>
+</div>

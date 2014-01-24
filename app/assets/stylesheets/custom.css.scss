@@ -26,6 +26,14 @@ background: linear-gradient(to bottom,  rgba(166,136,99,1) 0%,rgba(255,255,255,1
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a68863', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 }
 
+html {
+  width: 100%;
+}
+
+body{
+  max-width: 1200px;
+  margin: 0 auto !important
+}
 .background-yellow { background-color: $yellow }
 .background-orange { background-color: $orange }
 .background-pink { background-color: $pink }
@@ -49,6 +57,7 @@ h1 {
 }
 header {
   position: relative ;
+  border-bottom: 4px groove darken($brown, 10%);
   img {
     height: 100%;
     width: 90%;
@@ -203,17 +212,55 @@ nav.visible-xs {
   z-index: -9;
   overflow: visible;
 }
-.carousel-caption {
-  // background: black;
-  // opacity: .8;
-  // left: 0;
-  // right: 0;
-  // bottom: 0;
-  // width: 800px;
-  // margin: 0 auto;
-  // padding-bottom: 60px;
-  display: none;
+
+
+  h3
+{
+  display: block;
+  position: relative;
+  width: 845px;
+  font-size: 1.5em;
+  font-weight: bold;
+  padding: 6px 0 6px 0;
+  margin: -450px 10px 500px 29px;
+  color: black;
+  background-color: yellow;
+  text-shadow: 0px 1px 2px #bbb;
+  -webkit-box-shadow: 0px 4px 4px #333;
+  -moz-box-shadow: 0px 4px 4px #333;
+  box-shadow: 0px 4px 4px #333;
+  text-align: center;
+    border-top: 3px solid black;
+      border-right: 3px solid black;
+  border-left: 3px solid black;
+
+
 }
+ h3:after{
+   content: ' ';
+   position: absolute;
+   width: 0;
+   height: 0;
+   left: -3px;
+   top: 100%;
+   border-width: 8px 11px;
+   border-style: solid;
+   border-color: #333 #333 transparent transparent;
+}
+
+
+ h3:before
+ {
+   content: ' ';
+   position: absolute;
+   width: 0;
+   height: 0;
+   right: 0;
+   top: 100%;
+   border-width: 8px 11px;
+   border-style: solid;
+   border-color:  #333  transparent transparent   #333   ;
+ }
 .wrapper {
   width: 75%;
   overflow: hidden;
@@ -221,16 +268,18 @@ nav.visible-xs {
 }
 .carousel-inner > .item > img, .carousel-inner > .item > a > img {
   width: 800px;
-  height: 500px;
+  max-width: 800px;
+  max-height: 800px;
+  height: auto;
+  max-height: 500px;
   display: block;
   position: relative;
   margin: 0 auto;
  -webkit-border-radius: 40px;
  -moz-border-radius: 40px;
  border-radius: 40px;
- -webkit-box-shadow: 0 0 10px 1px black;
- -moz-box-shadow: 0 0 10px 1px black;
- box-shadow: 0 0 10px 1px black;
+ border: 1px solid black;
+
 
 }
 ol.carousel-indicators {
@@ -270,26 +319,36 @@ ol.carousel-indicators {
     background: $brown;
     margin: 0 auto;
   }
-  .carousel-inner > .item > img, .carousel-inner > .item > a > img {
-    width: 100%;
-    height: 400px;
-  }
 }
-.carousel.carousel-fade .item {
-  -webkit-transition: opacity  1s ease-in-out;
-  -moz-transition: opacity 1ss ease-in-out;
-  -ms-transition: opacity 1s ease-in-out;
-  -o-transition: opacity 1s ease-in-out;
-  transition: opacity 1s ease-in-out;
+.carousel.fade {
+  opacity: 1;
 }
-.carousel.carousel-fade .active.left,
-.carousel.carousel-fade .active.right {
-  left: 0;
-  z-index: 2;
+.carousel.fade .item {
+  -moz-transition: opacity ease-in-out 2s;
+  -o-transition: opacity ease-in-out 2s;
+  -webkit-transition: opacity ease-in-out 2s;
+  transition: opacity ease-in-out 2s;
+  left: 0 !important;
   opacity: 0;
-  filter: alpha(opacity=0);
+  top:0;
+  position:absolute;
+  width: 100%;
+  display:block !important;
+  z-index:1;
 }
-/* /carousel */
+.carousel.fade .item:first-child {
+  top:auto;
+  position:relative;
+}
+.carousel.fade .item.active {
+  opacity: 1;
+  -moz-transition: opacity ease-in-out 2s;
+  -o-transition: opacity ease-in-out 2s;
+  -webkit-transition: opacity ease-in-out 2s;
+  transition: opacity ease-in-out 2s;
+  z-index:2;
+}
+// /* /carousel */
 
 
 // Features Row
@@ -431,69 +490,52 @@ ol.carousel-indicators {
     margin: 0 auto 10px;
     border-radius: 25px;
   }
-  .col-md-6:first-child { border-right: 1px dashed $brown }
-  .col-md-6:last-child { margin-top: 75px }
-  .form-group {
-    height: 30px;
-    .col-md-4, .col-lg-2 { 
-      text-align: right;
-      padding-right: 0;
-    }
-    label[for="inputtimetocall"] { line-height: 1 }
-    #date_hour, #date_minute {
-     margin-top: 3px;
-      padding: 2px 0
-    }
+
+  .col-md-6:last-child { 
+    padding-top: 75px;
+    border-left: 1px dashed $brown 
   }
-  .btn { background-color: yellow;
-    color: black;
-    box-shadow: 2px 2px 4px 2px black;
-    &:hover {
-      background-color: black;
-      color: yellow;
-    }
+  .btn {
+    background: $orange;
+    border: 1px solid yellow;
+    font-family: "poiret one";
+    padding: 5px;
+    font-weight: bold;
+    font-size: 2em;
+    box-shadow: 0 0 5px 5px #333;
+
   }
 }
-@media(max-width: 1100px) {
-  .about-me-row {
-    .form-group {
-      height: 50px;
-      label { float: left }
-    }
-    label[for="inputtimetocall"] { margin-top:  5px }
-    #date_hour, #date_minute { margin-left: 10px }
-    .col-md-6 { padding: 0 5% }
+@media(min-width: 769px) {
+  .telephone { padding: 0 }
+  .best-time {
+    margin-top: 30px;
+    margin-bottom: 0;
   }
 }
-@media(min-width: 769px) and (max-width: 1170px) {
-  .about-me-row {
-    .col-md-6 { padding: 0 2% }
+@media(max-width: 768px) {
+  .col-md-3, .col-md-8 {
+    padding-left: 0;
   }
 }
+
 /* /About me row */
 
 /* Footer*/
 footer {
+    border-top: 4px ridge darken($brown, 10%);
+
   color: black;
-  .gradient{
-  background: rgb(255,255,255); /* Old browsers */
-  background: -moz-linear-gradient(top,  rgba(255,255,255,1) 1%, rgba(166,136,99,1) 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(1%,rgba(255,255,255,1)), color-stop(100%,rgba(166,136,99,1))); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(166,136,99,1) 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(166,136,99,1) 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(top,  rgba(255,255,255,1) 1%,rgba(166,136,99,1) 100%); /* IE10+ */
-  background: linear-gradient(to bottom,  rgba(255,255,255,1) 1%,rgba(166,136,99,1) 100%); /* W3C */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#a68863',GradientType=0 ); /* IE6-9 */
-}
+  background: $brown
   img {
-        height: 100%;
-      width: 90%;
-      max-width: 150px;
-      background: seashell;
-      border-radius:  25px;
-      box-shadow: inset -3px -3px 5px 1px #333;
-      margin-bottom: 6px;
-      margin-top: 6px;
+    height: 100%;
+    width: 90%;
+    max-width: 150px;
+    background: seashell;
+    border-radius:  25px;
+    box-shadow: inset -3px -3px 5px 1px #333;
+    margin-bottom: 6px;
+    margin-top: 6px;
   }
   h5 {
     text-decoration: underline;
@@ -551,6 +593,7 @@ footer {
   }
 }
 
+/* Contact Page */
 .contact-us-page {
   .jumbo-font {
     margin-top: 50px;
@@ -563,9 +606,9 @@ footer {
   }
   .large-font {
     font-size: 2em;
-        font-family: 'poiret one';
-color: $orange;
-  font-weight: bold;
+    font-family: 'poiret one';
+    color: $orange;
+    font-weight: bold;
   }
   .contact-page-text {
     padding-left: 10%;
@@ -579,9 +622,7 @@ color: $orange;
     color: black;
     font-size: 1.25em;
   }
-  .contact-form {
-    padding-right: 10%;
-  }
+  .contact-form { padding-right: 10% }
   .btn {
     background: $orange;
     border: 1px solid white;
@@ -595,21 +636,14 @@ color: $orange;
     width: 150px;
     height: 150px;
   }
-
 }
 @media(max-width: 768px) {
   .contact-us-page {
     padding: 0 5%;
-    .jumbo-font { 
-      font-size: 6em;
-    }
-    .large-font { 
-      font-size: 2em;
-    }
-  .contact-page-text {
-    padding: 0 2%;
+    .jumbo-font { font-size: 6em }
+    .large-font { font-size: 2em }
+    .contact-page-text { padding: 0 2% }
   }
-        }
 }
 @media(max-width: 580px) {
   .contact-us-page {
@@ -621,3 +655,17 @@ color: $orange;
     }
   }
 }
+/* /Contact Page */
+
+/* Flash Messages */
+.error_messages {
+  color: red;
+  background: yellow;
+  padding: 2px;
+  border: 1px solid red;
+}
+.col-md-4 .error_messages h2 { 
+  font-size: 20px;
+  text-transform: uppercase;
+}
+/* /Flash Messages */

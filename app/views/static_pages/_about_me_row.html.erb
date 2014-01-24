@@ -10,7 +10,22 @@
     <div class="col-md-6 col-sm-6">
       <h1 class="text-center">Schedule Consultation</h1>
       <h5>To schedule an appointment or find out more information please call me at <b>(555) 555-5555</b> or tell me about yourself and I will be in touch:</h5>
-      <%= render 'contact_form' %>
+      <%= form_for @message do |f| %>
+        <% if @message.errors.any? %>
+          <div class="error_messages">
+            <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being sent:</h2>
+            <ul>
+              <% @message.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <%= render 'shared/fields', f: f %>
+        <div class="form-group text-center">
+          <%= f.submit "Send Message", class: "btn btn-default btn-primary" %>    
+        </div>
+      <% end %>
     </div>
     
   </div>
