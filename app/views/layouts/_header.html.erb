@@ -1,53 +1,35 @@
-<!-- Logo -->
-<div class="row">
-  <div class="col-md-4 col-sm-3 text-center  hidden-xs">
-    <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
-  </div>
-<!-- /Logo -->
-  
 <!-- Desktop Navbar -->
-  <div class="col-md-8 col-sm-9">
-    <nav class="navbar navbar-default text-center hidden-xs" role="navigation">
-      <ul class="nav navbar-nav">
-        <li><%= link_to "Home", root_path %></li>
-
-        <li>    <%= link_to "Cakes", "#" %></li>
-        <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
-        <li><a href="#">Other<br />Pastries</a></li>
-        <li><a href="#">Party Favors</a></li>
-        <!--  <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Cakes</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">Cupcakes</a></li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
-        <li><a href="#">About Me</a></li>
-        <li>    <%= link_to "Contact Us", contact_path %></li>
-      </ul>
-    </nav>
+<div class="col-md-12 text-right">
+  <nav class="navbar navbar-default text-center hidden-xs" role="navigation">
+    <ul class="nav navbar-nav pull-right">
+      <li><%= link_to "Cakes", "#" %></li>
+      <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
+      <li><a href="#">Other Pastries</a></li>
+      <li><a href="#">Party Favors</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><%= link_to "Contact Us", contact_path %></li>
+    </ul>
+    <div class="col-md-6 pull-right header-contact-info">
+      ***Proudly Serving Central New Jersey***&nbsp;&nbsp;
+      <i class="fa fa-phone "></i><span text-centers>(555)555-5555</span>&nbsp;&nbsp;
+      <span class="header-icons">
+        <%= link_to("#") do %><i class="fa fa-facebook-square "></i><% end %>&nbsp;
+        <%= link_to("#") do %><i class="fa fa-twitter-square "></i><% end %>
+      </span>
+      <br />
+      <%= link_to("Set Up Consultation", contact_path, class: "custom-btn btn btn-default btn-lrg")  if params[:action]!="home" %>
+    </div>
+    <%= link_to image_tag('logo.png'), root_path, class: 'navbar-brand col-md-3 col-sm-4' %>
+  </nav>
+</div>
 <!-- /Desktop Navbar -->
 
-<!-- Header contact info and button -->
-    <div class=" header-contact col-md-6 col-md-offset-1 text-center hidden-xs">
-      <%= render 'layouts/contact_header' %>
-    </div>
-<!-- /Header contact info and button -->
-  </div>
 
 <!-- Mobile  -->
   <nav class="navbar navbar-default visible-xs" role="navigation">
 <!-- Logo -->
     <div class="col-sm-12 text-center">
-      <%= image_tag('logo_transparent_background.png', alt: "Sweet Little Buttercups", class: "text-center") %>
-    </div>
-
-<!-- Header contact info & button -->
-    <div class="col-sm-12 header-contact text-center ">
-      <%= render 'layouts/contact_header' %>
+      <%= link_to image_tag('logo.png', alt: "Sweet Little Buttercups"), root_path, class: 'text-center'  %>
     </div>
 
 <!-- Navbar -->
@@ -64,23 +46,12 @@
 <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Cakes</a></li>
-        <li><a href="#">Cookies/Cupcakes</a></li>
-        <li><a href="#">Other Pastries</a></li>
-        <li><a href="#">Party Favors</a></li>
-        <!--  <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown">Baked Goods <b class="caret"></b></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Cakes</a></li>
-            <li><a href="#">Cookies</a></li>
-            <li><a href="#">Cupcakes</a></li>
-            <li><a href="#">Separated link</a></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li> -->
-        <li><a href="#">About Me</a></li>
-        <li><a href="#">FAQ</a></li>
+              <li><%= link_to "Cakes", "#" %></li>
+      <li><a href="#">Cookies/<wbr>Cupcakes</a></li>
+      <li><a href="#">Other Pastries</a></li>
+      <li><a href="#">Party Favors</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><%= link_to "Contact Us", contact_path %></li>
       </ul>
     </div>
 <!-- /Navbar -->

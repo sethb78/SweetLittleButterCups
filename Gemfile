@@ -4,7 +4,11 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.2'
 gem 'active_attr'
-
+gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'carrierwave'
+gem 'fog'
+gem 'carrierwave_direct'
+gem 'sidekiq'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1'

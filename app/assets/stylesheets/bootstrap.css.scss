@@ -1705,7 +1705,7 @@ input[type="number"]::-webkit-inner-spin-button {
   color: #999999;
 }
 
-.form-control {
+.form-control, #message_best_time {
   display: block;
   width: 100%;
   height: 34px;
@@ -5991,7 +5991,7 @@ body.modal-open,
 .carousel-inner {
   position: relative;
   width: 100%;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .carousel-inner > .item {

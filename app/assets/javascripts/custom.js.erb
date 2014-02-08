@@ -12,6 +12,12 @@ $(document).ready(function(){
 
 $('#carousel').carousel();
 
+$('#carousel-indicators  a').click(function(q){
+    q.preventDefault();
+    targetSlide = $(this).attr('data-to')-1;
+    $('#my-carousel').carousel(targetSlide);
+});
+
 /* Scrolling quotes */
 $('.scrolling_quote').css({"display": "block"})
     var quotes = $(".quotes");
@@ -35,4 +41,13 @@ $('.scrolling_quote').css({"display": "block"})
   $("#phone").mask("(999) 999-9999");
 /* /Format for phone number on contact form */
 
+
+$('.carousel h1.responsive-text').responsiveHeadlines({
+            container: 'col-md-12',
+        maxFontSize: 64,
+        minFontSize: 22
+    });
+
+
+$('.carousel .item:first').addClass('active');
 })
