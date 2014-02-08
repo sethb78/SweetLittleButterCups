@@ -21,7 +21,7 @@
     .carousel-text {
       display: block;
           background-color: black;
-    background-image: url('10_percent_white_transparency.png');
+    background-image: image-url('10_percent_white_transparency.png');
     padding-bottom: 5px;
     }
   }
@@ -34,7 +34,7 @@
 @media(min-width: 769px) {
   .carousel {
     background-color: black;
-    background-image: url('10_percent_white_transparency.png');
+    background-image: image-url('10_percent_white_transparency.png');
   background-repeat: repeat;
     box-shadow:0 0 20px 10px black;
   }
