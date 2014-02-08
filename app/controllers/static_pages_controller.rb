@@ -11,4 +11,6 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+  def baked_goods
+  end
 end

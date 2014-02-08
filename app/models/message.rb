@@ -14,7 +14,7 @@ class Message
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX } 
   validates_length_of :content, :maximum => 500
 
-  validates :phone, format: { with: /\d{3}-\d{3}-\d{4}/, message: "bad format" }
+
   validates :best_time, presence: true
 
 

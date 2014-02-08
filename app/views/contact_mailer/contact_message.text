@@ -1,0 +1,7 @@
+Date Sent:  <%= DateTime.now.strftime("%b %d at %I:%M %p") %>
+From:  <%= @contact_email.name %>
+       <%= @contact_email.email %>
+       <%= @contact_email.phone %>
+Best Time To Call:  <%= @contact_email.best_time %>
+Message:  <%= @contact_email.content %>
+ 

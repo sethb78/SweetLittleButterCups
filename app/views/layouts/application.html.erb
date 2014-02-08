@@ -20,10 +20,12 @@
 <% if params[:action] == "home" %>
   <%= render 'layouts/carousel' %>
 <% end %>
-<% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
-<% end %>
+
 <div class="main-body">
+<div class="<% if params [:action] != "home" %> page <% end %>">
+<% flash.each do |key, value| %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} transparent-black-background text-center") %>
+<% end %>
 <%= yield %>
 </div>
 <footer>

@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Date Sent:</th>
+    <td><%= DateTime.now.strftime("%b %d at %I:%M %p") %></td>
+  </tr>
+  <tr>
+    <th>From:</th>
+    <td><%= @contact_email.name %></td>
+    <td><%= @contact_email.email %></td>
+    <td><%= @contact_email.phone %></td>
+  </tr>
+    <tr>
+    <th>Best Time To Call:</th>
+    <td><%= @contact_email.best_time %></td>
+  </tr>
+  <tr>
+    <th>Message:</th>
+    <td><%= @contact_email.content %>
+</td>
+  </tr>
+
+</table>
+

@@ -17,6 +17,13 @@ describe "Static pages" do
     it { should_not have_title( '| Home') }
   end
 
+    describe "Baked Goods Page" do
+    before { visit baked_goods_path }
+    let(:page_title) { 'Baked Goods' }
+
+    it_should_behave_like "all static pages"
+  end
+
   describe "About Page" do
     before { visit about_path }
     let(:page_title) { 'About Us' }
