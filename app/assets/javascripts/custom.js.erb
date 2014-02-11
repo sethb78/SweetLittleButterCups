@@ -50,4 +50,24 @@ $('.carousel h1.responsive-text').responsiveHeadlines({
 
 
 $('.carousel .item:first').addClass('active');
+
+
+/* Set width of .header-contact-info to width of navbar so it centers correctly */
+var NavbarWidth = $('.navbar-nav').width();
+$('.header-contact-info').css("width", NavbarWidth );
+ /* /Set width of .header-contact-info to width of navbar so it centers correctly */
+
+var LogoHeight = $('.logo').height();
+
+// if( LogoHeight == 0){
+//     $('header').css("height", "220px" );
+
+// }
+// else {
+//     LogoHeight = LogoHeight / 2;
+// $('.page').css("margin-top", LogoHeight );
+// }
+
+
+
 })

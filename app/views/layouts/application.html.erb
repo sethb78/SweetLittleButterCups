@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<header class="<% if params[:action] != "home" %> transparent-black-background <% end %>">
+<header>
 
   <%= render 'layouts/header' %>
 </header>
@@ -24,7 +24,7 @@
 <div class="main-body">
 <div class="<% if params[:action] != "home" %> page <% end %>">
 <% flash.each do |key, value| %>
-  <%= content_tag(:div, value, class: "alert alert-#{key} text-center") %>
+  <%= content_tag(:div, value, class: "alert alert-#{key} transparent-black-background text-center") %>
 <% end %>
 <%= yield %>
 </div>

@@ -13,15 +13,15 @@
     max-height: 50px;
   }
   .carousel {
-    margin-top: 235px;
+    margin-top: 150px;
     border-top: 2px solid grey;
     .item {
       margin-bottom: 20px;
+        display:block !important;
+
     }
     .carousel-text {
       display: block;
-          background-color: black;
-    background-image: image-url('10_percent_white_transparency.png');
     padding-bottom: 5px;
     }
   }
@@ -31,26 +31,35 @@
 
 }
 
-@media(min-width: 769px) {
+@media(min-width: 768px) {
   .carousel {
-    background-color: black;
-    background-image: image-url('10_percent_white_transparency.png');
-  background-repeat: repeat;
-    box-shadow:0 0 20px 10px black;
+
+
+  .carousel.fade .item {
+    display: table;
+  }
+  .carousel-text { 
+    position:absolute; top:50%; 
+    height:240px; 
+    margin-top:-120px;
+    right: 5%;
+  }
   }
 }
 
 @media(max-width: 979px){
-  .carousel  .carousel-text ul {
-    padding-left: 0;
-    text-align: center;
-    margin-bottom: 10px
+  .carousel  {
+
+    .carousel-text ul {
+      padding-left: 0;
+      text-align: center;
+      margin-bottom: 10px
+    }
   }
 }
 
 @media(min-width: 992px){
   .carousel-text {
-    margin-top: 50px;
     h1 {
       font-size: 3em;
       text-align: left;
@@ -73,28 +82,35 @@
   }
 }
 
+
+
 /* /CAROUSEL */
 
 
 @media(max-width: 767px) {
   .page {
-    margin-top: 100px
+    margin-top: 150px
   }
 }
 
 
-
-/* Header */
 @media(max-width: 768px) {
-  header {
-    background-color: black;
-    background-image: image-url('10_percent_white_transparency.png');
+    header .logo {
+      width: 100%;
+      height: auto;
+      max-width: 350px;
+      margin: 0 auto;
+      position: relative;
 
-  }
+    }
 }
-@media(min-width: 979px){
-  header img {margin-top: -20px }
-}
+
 /* /Header */
 
+
+@media(min-width: 769px) {
+  .contact-form {
+    margin-top: 50px;
+  }
+}
 
