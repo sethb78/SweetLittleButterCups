@@ -10,9 +10,15 @@ class ApplicationController < ActionController::Base
 end
 
 def carousel_variables
-    @carousel_slides = Carousel.all.order("priority")
+        @carousel_slides = Carousel.all.order("priority")
+
+
+    
+
 end
 
 def globals
    @message = Message.new
   end
+
+Carousel.all(:select => "Max(priority)")

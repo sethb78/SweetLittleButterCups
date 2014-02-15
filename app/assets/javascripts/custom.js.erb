@@ -70,4 +70,100 @@ var LogoHeight = $('.logo').height();
 
 
 
+    $(function() {
+    var $l = $('#carousel-left'),
+    $c = $('#carousel-center'),
+    $r = $('#carousel-right');
+    $l.carouFredSel({
+    auto: false,
+    items: 1,
+    direction: 'right',
+    prev: {
+    button: '#prev',
+    fx: 'uncover',
+    onBefore: function() {
+    setTimeout(function() {
+    $c.trigger( 'prev' );
+    }, 100);
+    }
+    },
+    next: {
+    fx: 'cover'
+    }
+    });
+    $c.carouFredSel({
+    auto: false,
+    items: 1,
+    prev: {
+    onBefore: function() {
+    setTimeout(function() {
+    $r.trigger( 'prev' );
+    }, 100);
+    }
+    },
+    next: {
+    onBefore: function() {
+    setTimeout(function() {
+    $l.trigger( 'next' );
+    }, 100);
+    }
+    }
+    });
+    $r.carouFredSel({
+    auto: false,
+    items: 1,
+    prev: {
+    fx: 'cover'
+    },
+    next: {
+    button: '#next',
+    fx: 'uncover',
+    onBefore: function() {
+    setTimeout(function() {
+    $c.trigger( 'next' );
+    }, 100);
+    }
+    }
+    });
+
+    });
+
+
+$('#caroufredsel').carouFredSel({
+    infinite: true,
+    auto: false,
+    pagination: false,
+    prev: {
+        button: '#prev',
+        key: 'left'
+    },
+    swipe: {
+        onTouch: true,
+        onMouse: true
+    },
+    next: {
+        button: '#next',
+        key: 'right'
+    },
+    items: {
+        visible: 'variable'
+    }
+});
+    $('#wrapper h1#carousel-center-title').show();
+    $('.carousel-center-title').html($('#carousel-center-slide').data('slide'));
+    $('#next').click(function(){
+            $('.carousel-center-title').html($('#carousel-center-slide').next().data('slide'));
+    });
+
+        $('#prev').click(function(){
+            var image_count = ($('#wrapper #carousel-center img').size())-1;
+            var current_slide = $("#carousel-center-slide");
+            for(var i = 0; i < image_count; i++) {
+                current_slide = current_slide.next();
+             $('.carousel-center-title').html($(current_slide).data('slide'));
+}
+
+    });
 })
+
+

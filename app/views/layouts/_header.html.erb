@@ -1,8 +1,9 @@
 <!-- Desktop Navbar -->
 <div class="col-md-12 text-right hidden-xs">
-    <%= link_to image_tag('logo.png', alt: "Sweet Little Buttercups", class: "logo"), root_path  %>
- 
-    <div class="col-md-12 col-sm-12 zero-padding ">
+<div class="col-md-4 col-sm-3">
+    <%= link_to image_tag('logo_transparent_background3.png', alt: "Sweet Little Buttercups", class: "logo pull-left"), root_path  %>
+ </div>
+    <div class="col-md-8 col-sm-9 zero-padding ">
   <nav class="navbar navbar-default text-center zero-padding  col-md-12" role="navigation">
     <ul class="nav navbar-nav pull-right zero-padding ">
       <li><%= link_to "Baked Goods", baked_goods_path %></li>
@@ -12,7 +13,7 @@
       <li><a href="#">About Me</a></li>
       <li><%= link_to "Contact Us", contact_path %></li>
     </ul>
-    <div class="col-md-8 col-md-offset-2 col-sm-12 pull-right header-contact-info">
+    <div class="col-md-10 col-md-offset-2 col-sm-12 pull-right header-contact-info">
       ***Proudly Serving Central New Jersey***&nbsp;&nbsp;
       <i class="fa fa-phone "></i><span text-centers>(555)555-5555</span>&nbsp;&nbsp;
       <span class="header-icons">
@@ -20,7 +21,7 @@
         <%= link_to("#") do %><i class="fa fa-twitter-square "></i><% end %>
       </span>
       <br />
-      <%= link_to("Set Up Consultation", contact_path, class: "custom-btn btn btn-default btn-lrg")  if params[:action]!="home" %>
+      <%= link_to("Set Up Consultation", contact_path, class: "custom-btn btn btn-default btn-lrg")  %>
     </div>
 
   </nav>
@@ -33,7 +34,7 @@
   <nav class="navbar navbar-default visible-xs" role="navigation">
 <!-- Logo -->
     <div class="col-sm-12 text-center">
-      <%= link_to image_tag('logo.png', alt: "Sweet Little Buttercups", class: "logo"), root_path  %>
+      <%= link_to image_tag('logo_transparent_background3.png', alt: "Sweet Little Buttercups", class: "logo"), root_path  %>
     </div>
 
 <!-- Navbar -->

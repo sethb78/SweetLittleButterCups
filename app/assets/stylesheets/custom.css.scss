@@ -1,9 +1,5 @@
-$brown: #a68863;
-$orange: #ff4e24;
-$pink: #ff18fb;
-$yellow: #f9ff50;
-$peach: #fecfa7;
 
+@import "configuration";
 @mixin radial_gradient($main_color: $yellow){
 background: rgb(249,255,80); /* Old browsers */
 background: -moz-linear-gradient(top,  rgba(249,255,80,1) 0%, rgba(251,255,131,1) 40%, rgba(251,255,131,1) 60%, rgba(249,255,80,1) 100%); /* FF3.6+ */
@@ -33,7 +29,7 @@ html {
   padding: 0;
 }
 .main-body { 
-  background-color: ivory;
+  background-color: seashell;
   background-image: image-url('logo_3_percent_transparency.png');
   background-repeat: repeat;
   -webkit-box-shadow: inset 0 -10px 20px -8px seashell;
@@ -85,11 +81,9 @@ h1 {
   width: 100%;
   background-color: seashell;
     background-repeat: repeat;
-      -webkit-box-shadow:  0 5px 10px 1px #808080 inset;
-     -moz-box-shadow:  0 5px 10px 1px #808080 inset;
-          box-shadow:  0 5px 10px 1px #808080 inset;
-    width: 105%;
-    margin-left: -2.5%;
+      -webkit-box-shadow:  0 -2px 2px 2px grey;
+     -moz-box-shadow:  0 -2px 2px 2px grey;
+          box-shadow:  0 -2px 2px 2px grey;
 
 
   .row {
@@ -99,18 +93,19 @@ h1 {
   }
 }
 header {
-  position: relative;
-  top: 0 ;
   width: 100%;
-  height: 125px;
   background-color: seashell;
-
+  position: relative;
+  display: inline-block !important;
+  -webkit-box-shadow:  0 1px 10px 2px grey;
+     -moz-box-shadow:  0 1px 10px 2px grey;
+          box-shadow:  0 1px 10px 2px grey;
   .logo {
     height: auto;
-    width: 25%;
+    width: 100%;
     max-width: 350px;
     background: transparent;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
 
@@ -125,7 +120,7 @@ header {
   font-family: "poiret one";
   font-weight: bold;
   font-size: 1.2em;
-  color: #3B3C36;
+  color: black;
 }
 .navbar {
       margin-bottom: 0;
@@ -135,6 +130,7 @@ header {
 /* /Universal Navbar styles */
 
 // Non-mobile navbar
+
 @media(min-width: 768px) {
   header, footer {
     z-index: 99;
@@ -148,27 +144,22 @@ header {
     display: block;
     // float: none;
     // margin: 0 10% 0 0;
-    // width: 90%;
     opacity: 1;
     margin-top: 5px;
 
   }
   .navbar-default .navbar-nav > li > a { color: #3B3C36 }
   .navbar-nav li { 
-    // width: 14.285714286%;
-    // display: table-cell;
-    // height: 50px;
-    vertical-align: middle;
-    // border-radius: 0 0 35px 35px;
-    // box-shadow: 1px 1px 4px 1px black;
+      box-sizing:border-box;
+      -moz-box-sizing:border-box; /* Firefox */
+
     overflow: hidden;
     border-right: 1px solid #3B3C36;
 
     a {
-      // display: table-cell;
-      // height: 50px;
-      // vertical-align: middle;
-    padding: 2px 15px;
+      display: table-cell;
+      vertical-align: middle;
+        padding: 5px 10px;
       text-align: center;
     }
   }
@@ -188,6 +179,9 @@ header {
 @media (min-width: 769px) and (max-width: 1170px) { 
   .navbar li > a { font-size: 100% }
 }
+@media (min-width: 800px) { 
+  .navbar li > a { padding: 5px 15px; }
+}
 /* /Non-mobile navbar */
 
 // Collapsed Navbar
@@ -199,6 +193,7 @@ header {
     .navbar-default .navbar-nav > li > a { color: #3B3C36 }
     
 }
+
 nav.visible-xs {
   header {
 
@@ -258,100 +253,6 @@ nav.visible-xs {
 }
 /* /collapsed navbar */
 
-// Carousel 
-.carousel {
-  width: 100%;
-  padding-bottom: 10px;
-  position: relative;
-
-    background-color: seashell;
-    box-shadow:0 0 20px 10px slategrey;
-    -mox-box-shadow: 0 0 20px 10px slategrey;
-    -webkit-box-shadow: 0 0 20px 10px slategrey;
-  img {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .carousel-inner {
-    overflow: visible;
-  }
-}
-
-
-
-.carousel-text {
-  color: #3B3C36;
-padding: 0;
-
-li {
-  list-style: none;
-  font-weight: 100;
-  font-family: 'spinnaker';
-  margin-bottom: 20px
-}
-h1 {
-    text-transform: uppercase;
-    white-space: nowrap;
-    width: 100%;
-    float: right;
-    margin: 5px auto 10px;
-    text-shadow: 1px 1px 1px grey;
-}
-i {margin-right: .2em;}
-
-}
-
-
-
-.wrapper {
-  width: 100%;
-  overflow: visible;
-  margin: 0 auto;
-}
-img {
-  margin: 0 auto;
-
-
-
-}
-// .carousel-images {
-//   height: 1;
-// }
-
-
-.carousel.fade {
-  opacity: 1;
-}
-.carousel.fade .item {
-  -moz-transition: opacity ease-in-out 1s;
-  -o-transition: opacity ease-in-out 1s;
-  -webkit-transition: opacity ease-in-out 1s;
-  transition: opacity ease-in-out 1s;
-  left: 0 !important;
-  opacity: 0;
-  top:0;
-  position:absolute;
-  width: 100%;
-  z-index:1;
-  overflow: hidden;
-
-  // height: 500px;
-
-}
-.carousel.fade .item:first-child {
-  top:auto;
-  position:relative;
-}
-.carousel.fade .item.active {
-  opacity: 1;
-  -moz-transition: opacity ease-in-out 2s;
-  -o-transition: opacity ease-in-out 2s;
-  -webkit-transition: opacity ease-in-out 2s;
-  transition: opacity ease-in-out 2s;
-  z-index:2;
-}
-
-// /* /carousel */
 
 
 // Features Row
@@ -560,16 +461,16 @@ footer {
   .custom-btn-wrapper {
     margin-top: 25px;
   }
+       .custom-btn {
+      margin-top: 20px;
+    }
 }
 
 .page {
   background-color: lighten($yellow, 10%);
-  -webkit-box-shadow:  0 -10px 20px -8px grey;
-     -moz-box-shadow:  0 -10px 20px -8px grey;
-          box-shadow:  0 -10px 20px -8px grey;
+
           padding-bottom: 25px;
           min-height: 800px;
-          margin-top: 110px;
   h1 {
     margin-top: 0;
   }
@@ -672,10 +573,7 @@ footer {
  
     z-index: 2;
   }
-  .carousel .custom-btn-wrapper {
-       margin: 0 auto;
-       display: inline-block;
-  }
+
 
   .custom-btn:hover {
     background-color: lighten($orange, 10%);
@@ -701,3 +599,42 @@ footer {
 
     text-transform: uppercase;
 }
+
+
+.caroufredsel_wrapper img, .carousel-inner .item img {
+
+background-color: darken($brown, 10%);
+background-image: url(texture5.png);
+
+
+}
+h1.carousel-center-title {
+  position: absolute;
+  color: white;
+  top: 25px;
+  left: 200px;
+  margin: 0 auto;
+  width: 550px;
+  text-align: center;
+  background-image: url('70_percent_black_transparency.png');
+  padding: 10px 0;
+  -webkit-border-radius: 0 0 8px 8px;
+  -mozborder-radius: 0 0 8px 8px;
+  border-radius: 0 0 8px 8px;
+  display: block;
+  z-index: 3;
+}
+h1.carousel-center-title {
+  -moz-box-shadow: 0 2px 1px 1px black;
+  -webkit-box-shadow: 0 2px 1px 1px black;
+  box-shadow: 0 2px 1px 1px black;
+
+}
+  .carousel-control {
+  color: white;
+  font-size: 80px;
+  }
+  .carousel-control .icon-prev, .carousel-control .icon-next {
+    height: 80px;
+    margin-top: -40px;
+  }
