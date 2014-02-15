@@ -57,7 +57,7 @@
     }
     #carousel-left img, #carousel-right img {
         background-color: #191919;
-        background-image: url(texture5.png);
+        background-image: image-url('texture5.png');
     }
     #carousel-left { left: 25px }
     #carousel-right { right: 25px }
@@ -71,7 +71,7 @@
         z-index: 2;
         img {
             background-color: $pink;
-            background-image: url(texture5.png);
+            background-image: image-url('texture5.png');
         }
     }
     .caroufredsel_wrapper { box-shadow: 0 0 10px rgba( 0, 0, 0, 0.3 ) }
@@ -81,7 +81,7 @@
     }
     #prev,#next {
         background: #191919;
-        background-image: url(texture5.png);
+        background-image: image-url('texture5.png');
         color: $pink;
         font-size: 100px;
         font-weight: bold;
@@ -107,7 +107,7 @@
     left:182px;
     width:586px;
     height:55px;
-   background-image: url('80_percent_black_transparency.png');
+   background-image: image-url('80_percent_black_transparency.png');
       color:white;
     padding:20px 40px;
     font-weight:bold;
@@ -164,7 +164,7 @@ h1.carousel-center-title:after {
 @media(max-width: 768px){
     .carousel-inner     img {
             background-color: $pink;
-            background-image: url(texture5.png);
+            background-image: image-url('texture5.png');
             margin: 0 auto;
         }
 }
