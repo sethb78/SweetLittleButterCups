@@ -3,3 +3,27 @@ $orange: #ff4e24;
 $pink: #ff18fb;
 $yellow: #f9ff50;
 $peach: #fecfa7;
+
+.zero-padding {
+  padding: 0;
+}
+
+.background-yellow { background-color: $yellow }
+.background-orange { background-color: $orange }
+.background-pink { background-color: $pink }
+.background-peach { background-color: $peach }
+.opaque-peach { background-color: $peach; opacity: .8}
+
+.transparent-black-background {
+  background-color: seasehll;
+  background-image: image-url('10_percent_white_transparency.png');
+  background-repeat: repeat;
+  box-shadow:0 0 20px 10px seasehll;
+  -webkit-box-shadow: 0 0 20px 10px seasehll;
+  -moz-box-shadow: 0 0 20px 10px seasehll;
+}
+
+h1 {
+    font-family: 'poiret one';
+    font-weight: 900
+}

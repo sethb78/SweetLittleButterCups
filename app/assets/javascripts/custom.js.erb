@@ -43,13 +43,13 @@ $('.scrolling_quote').css({"display": "block"})
 
 
 $('.carousel h1.responsive-text').responsiveHeadlines({
-            container: 'col-md-12',
+        container: 'col-md-12',
         maxFontSize: 64,
         minFontSize: 22
     });
 
 
-$('.carousel .item:first').addClass('active');
+$('.carousel .item:first').addClass('active'); // Add .active to first carousel item
 
 
 /* Set width of .header-contact-info to width of navbar so it centers correctly */
@@ -57,20 +57,10 @@ var NavbarWidth = $('.navbar-nav').width();
 $('.header-contact-info').css("width", NavbarWidth );
  /* /Set width of .header-contact-info to width of navbar so it centers correctly */
 
-var LogoHeight = $('.logo').height();
-
-// if( LogoHeight == 0){
-//     $('header').css("height", "220px" );
-
-// }
-// else {
-//     LogoHeight = LogoHeight / 2;
-// $('.page').css("margin-top", LogoHeight );
-// }
 
 
-
-    $(function() {
+// Carousel for > 768px devices
+$(function() {
     var $l = $('#carousel-left'),
     $c = $('#carousel-center'),
     $r = $('#carousel-right');
@@ -125,10 +115,10 @@ var LogoHeight = $('.logo').height();
     }
     }
     });
+});
+// End of Carousel for > 768px devices
 
-    });
-
-
+// Carousel for <= 768px devices
 $('#caroufredsel').carouFredSel({
     infinite: true,
     auto: false,
@@ -149,21 +139,28 @@ $('#caroufredsel').carouFredSel({
         visible: 'variable'
     }
 });
+// End of Carousel for <= 768px devices
+
+
+// Dynamically get each center slide's title and display as header
+$(function Carousel_Header() {
     $('#wrapper h1#carousel-center-title').show();
     $('.carousel-center-title').html($('#carousel-center-slide').data('slide'));
+
     $('#next').click(function(){
-            $('.carousel-center-title').html($('#carousel-center-slide').next().data('slide'));
+        $('.carousel-center-title').html($('#carousel-center-slide').next().data('slide'));
     });
-
-        $('#prev').click(function(){
-            var image_count = ($('#wrapper #carousel-center img').size())-1;
-            var current_slide = $("#carousel-center-slide");
-            for(var i = 0; i < image_count; i++) {
-                current_slide = current_slide.next();
-             $('.carousel-center-title').html($(current_slide).data('slide'));
-}
-
+    $('#prev').click(function(){
+        var image_count = ($('#wrapper #carousel-center img').size())-1;
+        var current_slide = $("#carousel-center-slide");
+        for(var i = 0; i < image_count; i++) {
+            current_slide = current_slide.next();
+            $('.carousel-center-title').html($(current_slide).data('slide'));
+        }
     });
+});
+// End of Carousel_Header function
+
 })
 
 

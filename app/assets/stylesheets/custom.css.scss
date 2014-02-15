@@ -1,212 +1,400 @@
-
 @import "configuration";
-@mixin radial_gradient($main_color: $yellow){
-background: rgb(249,255,80); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(249,255,80,1) 0%, rgba(251,255,131,1) 40%, rgba(251,255,131,1) 60%, rgba(249,255,80,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(249,255,80,1)), color-stop(40%,rgba(251,255,131,1)), color-stop(60%,rgba(251,255,131,1)), color-stop(100%,rgba(249,255,80,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(249,255,80,1) 0%,rgba(251,255,131,1) 40%,rgba(251,255,131,1) 60%,rgba(249,255,80,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9ff50', endColorstr='#f9ff50',GradientType=0 ); /* IE6-9 */
-}
-
-@mixin brown-gradient {
-  background: rgb(166,136,99); /* Old browsers */
-background: -moz-linear-gradient(top,  rgba(166,136,99,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(166,136,99,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  rgba(166,136,99,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  rgba(166,136,99,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  rgba(166,136,99,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-background: linear-gradient(to bottom,  rgba(166,136,99,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a68863', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-}
 
 html {
   width: 100%;
 }
-.zero-padding {
-  padding: 0;
-}
-.main-body { 
-  background-color: seashell;
-  background-image: image-url('logo_3_percent_transparency.png');
-  background-repeat: repeat;
-  -webkit-box-shadow: inset 0 -10px 20px -8px seashell;
-     -moz-box-shadow: inset 0 -10px 20px -8px seashell;
-          box-shadow: inset 0 -10px 20px -8px seashell;
-}
+
 body{
-  margin: 0 auto !important;
-  width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  background-color: seashell;
-
+	margin: 0 auto !important;
+	width: 100%;
+  	overflow-x: hidden;
+  	overflow-y: scroll;
+  	background-color: seashell;
 }
 
-.background-yellow { background-color: $yellow }
-.background-orange { background-color: $orange }
-.background-pink { background-color: $pink }
-.background-peach { background-color: $peach }
-.opaque-peach { background-color: $peach; opacity: .8}
-
-.transparent-black-background {
-  background-color: seasehll;
-    background-image: image-url('10_percent_white_transparency.png');
-  background-repeat: repeat;
-    box-shadow:0 0 20px 10px seasehll;
-    -webkit-box-shadow: 0 0 20px 10px seasehll;
-    -moz-box-shadow: 0 0 20px 10px seasehll;
-}
-h1 {
-  font-family: 'poiret one';
-  font-weight: 900
-}
-.main-body {
-  // border-left: 2px solid $brown;
-  // border-right: 2px solid $brown;
+.main-body { 
+  	background-color: seashell;
+  	background-image: image-url('logo_3_percent_transparency.png');
+  	background-repeat: repeat;
+  	-webkit-box-shadow: inset 0 -10px 20px -8px seashell;
+  	-moz-box-shadow: inset 0 -10px 20px -8px seashell;
+  	box-shadow: inset 0 -10px 20px -8px seashell;
 }
 
-.horizontal-break {
-  margin-top: -12.5px;
-  .col-md-3 { 
-  
-    height: 25px;
- }
+.page {
+  	background-color: lighten($yellow, 10%);
+        background-image: image-url('logo_3_percent_transparency.png');
+
+    padding-bottom: 25px;
+    min-height: 800px;
+  	h1 {
+		margin-top: 0;
+  	}
 }
 
- footer {
-    // border-bottom: 4px groove darken($brown, 10%);
-  width: 100%;
-  background-color: seashell;
-    background-repeat: repeat;
-      -webkit-box-shadow:  0 -2px 2px 2px grey;
-     -moz-box-shadow:  0 -2px 2px 2px grey;
-          box-shadow:  0 -2px 2px 2px grey;
-
-
-  .row {
-    position: relative;
-    top: 20px;
-    background-color: seashell;
+.breadcrumb {
+  background: transparent;
+  li a {
+    color: lighten(#191919, 25%);
+  }
+   > li + li:before {
+content: "/ ";
+    color: #191919
   }
 }
+
+/*-------------------------------------------------- Start Header ---------------------------------------------- */
 header {
-  width: 100%;
-  background-color: seashell;
-  position: relative;
-  display: inline-block !important;
-  -webkit-box-shadow:  0 1px 10px 2px grey;
-     -moz-box-shadow:  0 1px 10px 2px grey;
-          box-shadow:  0 1px 10px 2px grey;
-  .logo {
-    height: auto;
-    width: 100%;
-    max-width: 350px;
-    background: transparent;
-    position: relative;
-    top: 0;
-    left: 0;
+  	width: 100%;
+  	background-color: seashell;
+  	position: relative;
+  	display: inline-block !important;
+  	-webkit-box-shadow:  0 1px 10px 2px grey;
+	-moz-box-shadow:  0 1px 10px 2px grey;
+	box-shadow:  0 1px 10px 2px grey;
+  	.logo {
+		height: auto;
+		width: 100%;
+		max-width: 350px;
+		background: transparent;
+		position: relative;
+		top: 0;
+		left: 0;
+	}
 
-  }
 }
+/*-------------------------------------------------- End Header ---------------------------------------------- */
 
+/*-------------------------------------------------- Start Navbar ---------------------------------------------- */
 
-
-// Universal navbar styles
 .navbar-nav > li > a {
-  line-height: auto;
-  font-family: "poiret one";
-  font-weight: bold;
-  font-size: 1.2em;
-  color: black;
+  	line-height: auto;
+  	font-family: "poiret one";
+  	font-weight: bold;
+  	font-size: 1.2em;
+  	color: black;
 }
 .navbar {
-      margin-bottom: 0;
-    background-image: image-url('texture.png');
-    background-repeat:repeat-x;
+	margin-bottom: 0;
+	background-image: image-url('texture.png');
+	background-repeat:repeat-x;
 }
-/* /Universal Navbar styles */
-
-// Non-mobile navbar
-
-@media(min-width: 768px) {
-  header, footer {
-    z-index: 99;
-  }
-  .navbar {
-    margin-top: 0;
-
-
+  .navbar-brand {
+    max-width: 300px;
+    height: auto;
+    padding-top: 0;
+    padding-left: 0;
+    float: none;
    }
-  .navbar-nav {
-    display: block;
-    // float: none;
-    // margin: 0 10% 0 0;
-    opacity: 1;
-    margin-top: 5px;
+/*-------------------------------------------------- End Navbar ---------------------------------------------- */
 
-  }
-  .navbar-default .navbar-nav > li > a { color: #3B3C36 }
-  .navbar-nav li { 
-      box-sizing:border-box;
-      -moz-box-sizing:border-box; /* Firefox */
+/*-------------------------------------------------- Start Features Row ---------------------------------------------- */
+.features-row {
+  	padding-top: 40px;
+  	.col-md-4 {
+		height: 250px;
+  	}
+	.clip-art { 
+		margin: 0 auto;
+		height: 75px;
+		width: 75px;
+  	}
+  	h1 {
+		margin: 0 auto;
+		padding: 0 0 5px;
+  		font-family: "poiret one";
+  		font-weight: bold;
+  	}
+  	ul { list-style: none }
+	ul li {
+		list-style: none;
+		margin: 10px 0;
+	}
+	ul li span {
+	  	bottom:2px;
+	  	left:2%;
+	  	position:relative;
+		font-family: "spinnaker";
+		font-size: 1.5em;
+	}
+	.col-md-4:first-child .features-row-header { background-color: $yellow}
+	.col-md-4:first-child ul li i { color: $yellow }
+    .col-md-4:nth-child(2) .features-row-header { background-color: $orange }
+	.col-md-4:nth-child(2)	ul li i { color: $orange }
+   	.col-md-4:last-child .features-row-header { background-color: $pink }
+	.col-md-4:last-child ul li i { color: $pink }
+    i { text-shadow: 0px 2px 1px black }
+  	.features-row-header {
+		width: 70%;
+		margin: 0 auto 20px;
+		border-radius: 50% 50% 0 0;
+  		box-shadow: 0 1px 1px 1px #333
+  	}
+	> .row > .col-xs-12 {
+  		margin-top: 10px;
+	}
+}
+/*-------------------------------------------------- End Features Row ---------------------------------------------- */
 
-    overflow: hidden;
-    border-right: 1px solid #3B3C36;
+/*-------------------------------------------------- Start Scrolling Quotes ---------------------------------------------- */
+.scrolling_quote {
+  	margin: 50px 2.5% 0;
+  	display: none;
+  	position: relative;
+  	text-align: justify;
+	color: black;
+  	display: block;
+  	overflow: visible;
+  	border-top: 2px dashed $brown;
+  	border-bottom: 2px dashed $brown;
+  	font-style: italic;
+  	.titlebox{
+		float:left;
+		padding:0 10px;
+		margin: -40px 0 0 20px;
+		font-family: "poiret one";
+		background: $yellow;
+		font-size: 24px;
+		font-weight: 900;
+		color: $pink;
+		border-radius: 10px 10px 0 0;
+		display: none;
+  	}
+  	.quotes {
+		display: none;
+		padding: 0 2.5%;
+		position: relative;
+		margin-top: 20px;
+    padding-bottom: 10px;
+    height: 150px;
 
-    a {
-      display: table-cell;
-      vertical-align: middle;
-        padding: 5px 10px;
-      text-align: center;
-    }
-  }
- 
-  .navbar-default .navbar-nav > li:hover, 
-  .navbar-default .navbar-nav > li:hover a,
-  .navbar-default .navbar-nav > li.active a
-   {
+  	}
+  	.source {
+		text-align: right;
+		font-style: none;
+		font-weight: bold;
+		position: absolute;
+		bottom: 0;
+		right: 20px;
 
+  	}
+}
+/*-------------------------------------------------- End Scrolling Quotes ---------------------------------------------- */
+
+/*-------------------------------------------------- Start About me Row ---------------------------------------------- */
+.about-me-row {
+	margin-top: 50px;
+	padding-bottom: 50px;
+	padding: 0 2.5%;
+	h1 { 
+		font-size: 36px;
+		margin-bottom: 5px
+	}
+	img { 
+		width: 25%;
+		height: auto;
+		margin: 0 auto 10px;
+		border-radius: 25px;
+	}
+  	> .row > .col-md-6:last-child { 
+		padding-top: 75px;
+		border-left: 1px dashed $brown 
+  	}
+}
+/*-------------------------------------------------- End About me Row ---------------------------------------------- */
+
+/*-------------------------------------------------- Start Footer ---------------------------------------------- */
+footer {
+  	width: 100%;
+  	background-color: seashell;
+	background-repeat: repeat;
     color: #3B3C36;
-    text-decoration: underline;
-    }
-
-
-  .navbar-nav li:last-child {border-right: none;}
+	-webkit-box-shadow:  0 -2px 2px 2px grey;
+	-moz-box-shadow:  0 -2px 2px 2px grey;
+	box-shadow:  0 -2px 2px 2px grey;
+  	.row {
+		position: relative;
+		top: 20px;
+		background-color: seashell;
+  	}
+  	img {
+		height: 100%;
+		width: 90%;
+		max-width: 150px;
+		margin: 6px auto;
+  	}
+  	h5 {
+		text-decoration: underline;
+		margin-bottom: 5px;
+  	}
+  	address { line-height: 1 }
+  	.web-designer a{
+		color: #333;
+		text-decoration: underline
+  	}
 }
-@media (min-width: 769px) and (max-width: 1170px) { 
-  .navbar li > a { font-size: 100% }
-}
-@media (min-width: 800px) { 
-  .navbar li > a { padding: 5px 15px; }
-}
-/* /Non-mobile navbar */
+/*-------------------------------------------------- End Footer ---------------------------------------------- */
 
-// Collapsed Navbar
-  .navbar-default .navbar-toggle .icon-bar {
-    margin-left: 3px;
-    background-color: #3B3C36;
-  }
-@media(max-width: 768px) {
-    .navbar-default .navbar-nav > li > a { color: #3B3C36 }
-    
+/*-------------------------------------------------- Start Header Contact ---------------------------------------------- */
+.header-contact-info {
+  	margin-top: 5px;
+  	color: #3B3C36;
+  	display: inline-block;
+  	letter-spacing: 1px;
+  	white-space: nowrap;
+  	.header-icons {
+ 		padding-top:0;
+  		position:absolute;
+  		top:0;
+  	}
+  	.header-icons i { font-size: 1.4em }
+    span {
+		font-size: 1.2em;
+		font-weight: 100;
+	}
+  	a {	color: #191919 }
+  	.custom-btn-wrapper { margin-top: 25px }
+	.custom-btn { margin-top: 20px;
+  color: white; }
+}
+/*-------------------------------------------------- End Header Contact ---------------------------------------------- */
+
+/*-------------------------------------------------- Start Contact Page---------------------------------------------- */
+.contact-us-page {
+  	.jumbo-font {
+		margin-top: 50px;
+		font-size: 8em;
+		font-weight: bold;
+		font-family: 'poiret one';
+		color: $orange;
+		text-shadow: 5px 3px 1px white;
+		letter-spacing: .1em;
+  	}
+  	.large-font {
+		font-size: 2em;
+		font-family: 'poiret one';
+		color: $orange;
+		font-weight: bold;
+  	}
+  	.contact-page-text {
+		padding-left: 10%;
+		text-shadow: 1px 1px 1px white;
+		letter-spacing: .1em;
+  	}
+  	p {
+		font-family: spinnaker sans-serif;
+		margin-top: 5px;
+		padding-right: 1em;
+		color: black;
+		font-size: 1.25em;
+  	}
+  	.contact-form { padding-right: 10% }
+  	.btn {
+		background: $orange;
+		border: 1px solid white;
+		font-family: "poiret one";
+		padding: 5px;
+		font-weight: bold;
+		font-size: 2em;
+		border: 10px solid white;
+		box-shadow: 0 0 15px 5px #333;
+		-webkit-box-shadow: 0 0 15px 5px #333;
+		-moz-box-shadow: 0 0 15px 5px #333;
+		border-radius: 50%;
+		width: 150px;
+		height: 150px;
+	 }
+}
+/*-------------------------------------------------- End Contact Page ---------------------------------------------- */
+
+/*-------------------------------------------------- Start Flash Messages ---------------------------------------------- */
+.error_messages {
+  	color: red;
+  	background: yellow;
+  	padding: 2px;
+  	border: 1px solid red;
+}
+.col-md-4 .error_messages h2 { 
+  	font-size: 20px;
+  	text-transform: uppercase;
+}
+.alert {
+	 border: 1px solid rgba(0, 0, 0, 0);
+	border-radius: 4px;
+	color: #FFFF00;
+	display: block;
+	font-size: 1.2em;
+	margin: 0 auto;
+	padding: 15px;
+	text-transform: uppercase;
+}
+/*-------------------------------------------------- End Flash Messages---------------------------------------------- */
+
+/*-------------------------------------------------- Start Custom Button ---------------------------------------------- */
+.custom-btn {
+	background-color: $orange;
+	color: white;
+	border-radius: 50px;
+	padding: 10px 20px;
+	font-weight: 900;
+	border: 5px groove lighten($orange, 10%);
+	box-shadow: inset 0 0 5px 2px $orange;
+	text-transform: uppercase;
+	font-family: 'poiret one';
+	font-size: 1.25em;
+	text-shadow: 1px 2px 1px #000000;
+ 	z-index: 2;
+ }
+.custom-btn:hover {
+	background-color: lighten($orange, 10%);
+	text-shadow: none;
 }
 
-nav.visible-xs {
-  header {
+/*-------------------------------------------------- Start Carousel ---------------------------------------------- */
 
-  }
-  .navbar-brand, .pull-none { 
-    float: none; 
+
+
+​
+ .carousel-control {
+  	color: white;
+  	font-size: 80px;
+}
+.carousel-control .icon-prev, .carousel-control .icon-next {
+	height: 80px;
+	margin-top: -40px;
+}
+/*-------------------------------------------------- End Carousel ---------------------------------------------- */
+
+
+
+h1.carousel-center-title {
+    position: absolute;
+    color: white;
+    text-shadow: 1px 1px $pink;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    background-image: url('60_percent_black_transparency.png');
+    padding: 10px 0;
+
+    border-radius: 0 0 8px 8px;
+    display: block;
+    z-index: 3;
+
+}
+.mobile_navbar {
+  .navbar-brand, .pull-none {
+    float: none;
     padding-left: 5px;}
     .navbar-brand { color: #3B3C36 }
-    .navbar-toggle, { 
+    .navbar-toggle, {
       background-color: darken(seashell, 10%);
       border-color: #3B3C36;
+      float: none;
      }
-    .navbar-collapse { 
+    .navbar-collapse {
       background-color: lighten(yellow, 10%);
     background-image: image-url('10_percent_white_transparency.png');
   }
@@ -216,7 +404,7 @@ nav.visible-xs {
     padding-bottom: 10px;
   }
 
-  .navbar-nav > li > a:hover,  .navbar-nav > li.active > a, .navbar-nav > li.active > a:hover{
+  .navbar-nav > li > a:hover, .navbar-nav > li.active > a, .navbar-nav > li.active > a:hover{
     text-decoration: underline;
     color: #3B3C36;
   }
@@ -250,391 +438,6 @@ nav.visible-xs {
     background-color: lighten(#89cff0, 10%)
   }
 }
-}
-/* /collapsed navbar */
-
-
-
-// Features Row
-.features-row {
-  padding-top: 40px;
-  .col-md-4 {
-        height: 250px;
-  }
-
-  .clip-art { 
-    margin: 0 auto;
-    height: 75px;
-    width: 75px;
-  }
-  h1 {
-    margin: 0 auto;
-    padding: 0 0 5px;
-  font-family: "poiret one";
-  font-weight: bold;
-  }
-  ul {
-    list-style: none;
-    li {
-      list-style: none;
-      margin: 10px 0;
-
-      span {
-  bottom:2px;
-  left:2%;
-  position:relative;
-    font-family: "spinnaker";
-    font-size: 1.5em;
-
-      }
-
-    }
-
-  }
-  .col-md-4:first-child {
-    .features-row-header { background-color: $yellow}
-    ul li i { color: $yellow }
-  }
-
-  .col-md-4:nth-child(2) {
-    .features-row-header { background-color: $orange }
-    ul li i { color: $orange }
-  }
-
-  .col-md-4:last-child {
-    .features-row-header { background-color: $pink }
-    ul li i { color: $pink }
-  }
-  i { text-shadow: 0px 2px 1px black }
-  .features-row-header {
-    width: 70%;
-    margin: 0 auto 20px;
-    border-radius: 50% 50% 0 0;
-  box-shadow: 0 1px 1px 1px #333
-  }
-}
-.features-row > .row > .col-xs-12 {
-  margin-top: 10px;
-}
-  @media(min-width: 769px){
-    .features-row
-  .col-md-4:nth-child(2) {
-
-    border-left: 1px dashed $brown;
-     border-right: 1px dashed $brown;
-  }
-}
-
-@media(min-width: 769px) and (max-width: 1100px) {
-  .features-row ul, .features-row .features-row-header {
-    width: 100%;
-    padding: 0;
-  }
-}
-// /End of features row
-
-
-// Scrolling Quotes
-.scrolling_quote {
-  margin: 50px 2.5% 0;
-  display: none;
-  position: relative;
-  text-align: justify;
-
-  // background-color: ;
-  color: black;
-  display: block;
-  overflow: visible;
-  border-top: 2px dashed $brown;
-  border-bottom: 2px dashed $brown;
-
-  font-style: italic;
-  .titlebox{
-    float:left;
-    padding:0 10px;
-    margin: -40px 0 0 20px;
-    font-family: "poiret one";
-    background: $yellow;
-    font-size: 24px;
-    font-weight: 900;
-    color: $pink;
-    border-radius: 10px 10px 0 0;
-    display: none;
-  }
-  .quotes {
-    display: none;
-    padding: 0 2.5%;
-    height: 100px;
-    position: relative;
-    margin-top: 20px;
-  }
-  .source {
-    text-align: right;
-    font-style: none;
-    font-weight: bold;
-    position: absolute;
-    bottom: 0;
-    right: 20px;
-  }
-}
-/* /Scrolling Quote */
-
-
-/* About Me Row */
-.about-me-row {
-  margin-top: 50px;
-  padding-bottom: 50px;
-  padding: 0 2.5%;
-  h1 { font-size: 36px;
-    margin-bottom: 5px
-  }
-  img { 
-    width: 25%;
-    height: auto;
-    margin: 0 auto 10px;
-    border-radius: 25px;
-  }
-
-  > .row > .col-md-6:last-child { 
-    padding-top: 75px;
-    border-left: 1px dashed $brown 
-  }
-
-}
-
-
-
-/* /About me row */
-
-/* Footer*/
-footer {
-
-  color: #3B3C36;
-
-  img {
-    height: 100%;
-    width: 90%;
-    max-width: 150px;
-    margin: 6px auto;
-  }
-  h5 {
-    text-decoration: underline;
-    margin-bottom: 5px;
-  }
-  address { line-height: 1 }
-  .web-designer a{
-    color: #333;
-    text-decoration: underline
-  }
-}
-@media(min-width: 769px){
-  footer .web-designer { margin-top: 50px }
-}
-/* /Footer */
-
-
-/* header contact */
-.header-contact-info {
-  margin-top: 5px;
-  color: #3B3C36;
-  display: inline-block;
-  letter-spacing: 1px;
-  white-space: nowrap;
-  .header-icons {
- padding-top:0;
-  position:absolute;
-  top:0;
-    i {
-    font-size: 1.4em;
-  }
-  }
-
-  span {
-
-    font-size: 1.2em;
-    font-weight: 100;
-
-}
-  a { 
-    color: seashell;
-  }
-  .custom-btn-wrapper {
-    margin-top: 25px;
-  }
-       .custom-btn {
-      margin-top: 20px;
-    }
-}
-
-.page {
-  background-color: lighten($yellow, 10%);
-
-          padding-bottom: 25px;
-          min-height: 800px;
-  h1 {
-    margin-top: 0;
-  }
-}
-
-/* Contact Page */
-.contact-us-page {
-  .jumbo-font {
-    margin-top: 50px;
-    font-size: 8em;
-    font-weight: bold;
-    font-family: 'poiret one';
-    color: $orange;
-    text-shadow: 5px 3px 1px white;
-    letter-spacing: .1em;
-  }
-  .large-font {
-    font-size: 2em;
-    font-family: 'poiret one';
-    color: $orange;
-    font-weight: bold;
-  }
-  .contact-page-text {
-    padding-left: 10%;
-    text-shadow: 1px 1px 1px white;
-    letter-spacing: .1em;
-  }
-  p {
-    font-family: spinnaker sans-serif;
-    margin-top: 5px;
-    padding-right: 1em;
-    color: black;
-    font-size: 1.25em;
-  }
-  .contact-form { padding-right: 10% }
-  .btn {
-    background: $orange;
-    border: 1px solid white;
-    font-family: "poiret one";
-    padding: 5px;
-    font-weight: bold;
-    font-size: 2em;
-    border: 10px solid white;
-    box-shadow: 0 0 15px 5px #333;
-      -webkit-box-shadow: 0 0 15px 5px #333;
-     -moz-box-shadow: 0 0 15px 5px #333;
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-  }
-}
-@media(max-width: 768px) {
-  .contact-us-page {
-    padding: 0 5%;
-    .jumbo-font { font-size: 6em }
-    .large-font { font-size: 2em }
-    .contact-page-text { padding: 0 2% }
-  }
-}
-@media(max-width: 580px) {
-  .contact-us-page {
-    .jumbo-font {
-      font-size: 4em;
-    }
-    .large-font {
-      font-size: 1.25em;
-    }
-  }
-}
-/* /Contact Page */
-
-/* Flash Messages */
-.error_messages {
-  color: red;
-  background: yellow;
-  padding: 2px;
-  border: 1px solid red;
-}
-.col-md-4 .error_messages h2 { 
-  font-size: 20px;
-  text-transform: uppercase;
-}
-/* /Flash Messages */
-
-
-    .custom-btn {
-    // background-color: #89CFF0;
-    background-color: $orange;
-    color: white;
-    border-radius: 50px;
-    padding: 10px 20px;
-    font-weight: 900;
-    border: 5px groove lighten($orange, 10%);
-    box-shadow: inset 0 0 5px 2px $orange;
-
-    text-transform: uppercase;
-    font-family: 'poiret one';
-    font-size: 1.25em;
-    text-shadow: 1px 2px 1px #000000;
- 
-    z-index: 2;
-  }
-
-
-  .custom-btn:hover {
-    background-color: lighten($orange, 10%);
-    text-shadow: none;
-  }
-  .navbar-brand {
-    max-width: 300px;
-    height: auto;
-    padding-top: 0;
-    padding-left: 0;
-   }
-
-
-.alert {
-      border: 1px solid rgba(0, 0, 0, 0);
-    border-radius: 4px;
-
-    color: #FFFF00;
-    display: block;
-    font-size: 1.2em;
-    margin: 0 auto;
-    padding: 15px;
-
-    text-transform: uppercase;
-}
-
-
-.caroufredsel_wrapper img, .carousel-inner .item img {
-
-background-color: darken($brown, 10%);
-background-image: url(texture5.png);
 
 
 }
-h1.carousel-center-title {
-  position: absolute;
-  color: white;
-  top: 25px;
-  left: 200px;
-  margin: 0 auto;
-  width: 550px;
-  text-align: center;
-  background-image: url('70_percent_black_transparency.png');
-  padding: 10px 0;
-  -webkit-border-radius: 0 0 8px 8px;
-  -mozborder-radius: 0 0 8px 8px;
-  border-radius: 0 0 8px 8px;
-  display: block;
-  z-index: 3;
-}
-h1.carousel-center-title {
-  -moz-box-shadow: 0 2px 1px 1px black;
-  -webkit-box-shadow: 0 2px 1px 1px black;
-  box-shadow: 0 2px 1px 1px black;
-
-}
-  .carousel-control {
-  color: white;
-  font-size: 80px;
-  }
-  .carousel-control .icon-prev, .carousel-control .icon-next {
-    height: 80px;
-    margin-top: -40px;
-  }
