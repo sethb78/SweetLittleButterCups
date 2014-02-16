@@ -161,6 +161,38 @@ $(function Carousel_Header() {
 });
 // End of Carousel_Header function
 
+
+//  In Baked Goods catalog page
+//  1.  Get height of largest image.
+//  2.  Iterate through each image.
+//  3.  Subtract current image height from largest image.
+//  4.  Make top and bottom margin 1/2 the difference.
+//  5.  In Mobile display make h1 height the same as image and vertically center.
+(function() {
+    var max_height = 0;
+    var image = null;
+
+    $('.static_pages_baked_goods .thumbnail img').each(function() {
+        var cur_height = $(this).height();
+        if (cur_height > max_height) {
+            max_height = cur_height;
+            image = this;
+        }
+    });
+    $('.static_pages_baked_goods .thumbnail img').each(function() {
+        var cur_height = $(this).height();
+        if (cur_height < max_height) {
+            $(this).css("margin-top", (max_height - cur_height)/2).css("margin-bottom", (max_height - cur_height)/2);
+        }            
+        if ( $(window).width() < 769) { 
+            $('.col-sm-12 h1').css({"height": max_height, "display": "table-cell", "vertical-align": "middle", "margin-top": "0", "padding-left": "2px"});
+        }
+    });
+})();
+
+
+
 })
+
 
 

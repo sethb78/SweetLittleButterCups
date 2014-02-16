@@ -235,4 +235,41 @@ h1.carousel-center-title:after {
 
 
 
-/*-------------------------------------------------- Start ---------------------------------------------- */
+/*-------------------------------------------------- Start Baked Goods Page ---------------------------------------------- */
+@media(max-width: 767px) {
+  .static_pages_baked_goods {
+        .thumbnail { 
+            border-radius: 4px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }
+        .thumbnail img {
+        float: left;
+        padding-right: 2%;
+        }
+        .thumbnail h1 {
+            text-align: center;
+            margin-top: 70px;
+        }
+    }
+}
+@media(min-width: 768px){
+    .static_pages_baked_goods {
+        max-width: 90%;
+        margin: 0 auto;
+        > .col-md-6, .col-lg-4 { padding: 0 }
+        .thumbnail {
+            padding: 40px;
+            text-align: center;
+        }
+    }
+}
+@media(min-width: 768px) and (max-width: 1169px){
+    .static_pages_baked_goods {
+        .thumbnail {
+            border-top: 1px dashed lightgrey;
+            border-bottom: 1px dashed lightgrey;
+        }
+    }
+}
+/*-------------------------------------------------- End Baked Goods Page ---------------------------------------------- */
