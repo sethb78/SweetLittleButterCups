@@ -8,6 +8,12 @@ $peach: #fecfa7;
   padding: 0;
 }
 
+.brown { color: #a68863 }
+.orange { color: #ff4e24 }
+.pink { color: #ff18fb }
+.yellow { color: #f9ff50 }
+.peach { color: #fecfa7 }
+
 .background-yellow { background-color: $yellow }
 .background-orange { background-color: $orange }
 .background-pink { background-color: $pink }
@@ -27,3 +33,5 @@ h1 {
     font-family: 'poiret one';
     font-weight: 900
 }
+
+.blank { display: none !important}

@@ -32,6 +32,7 @@ body{
     width: 100%;
   	h1 {
 		margin-top: 0;
+    text-shadow: 2px 2px 5px white;
   	}
 }
 
@@ -237,7 +238,12 @@ footer {
   	.web-designer a{
 		color: #333;
 		text-decoration: underline
-  	}
+  }
+  .navbar-nav {
+    float: none;
+    display: inline-block;
+    margin: 0 auto;
+  }
 }
 /*-------------------------------------------------- End Footer ---------------------------------------------- */
 
@@ -357,39 +363,108 @@ footer {
 }
 
 /*-------------------------------------------------- Start Carousel ---------------------------------------------- */
-
-
-
-​
- .carousel-control {
-  	color: white;
-  	font-size: 80px;
+.roundabout-holder {
+  list-style: none;
+  padding: 0;
+  height: 475px;
+  width: 45%;
+  margin: 0 auto;
 }
-.carousel-control .icon-prev, .carousel-control .icon-next {
-	height: 80px;
-	margin-top: -40px;
+.roundabout-moveable-item {
+  height: 450px;
+  width: 600px;
+  max-width: cover;
+  cursor: pointer;
+  background-color: grey;
+  background-image: image-url('texture5.png');
+  border: 1px solid #999;
+  img { 
+    width: 90%; 
+    height: 100%;
+    margin: 0 auto;
+    display: block;
+  }
+}
+h1.carousel-center-title {
+  display: none;
+}
+.roundabout-in-focus {
+  cursor: auto;
+  max-width: cover;
+  background-color: $yellow;
+  background-image: none;
+  border-top: none;
+  border-left: none;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  h1.carousel-center-title {
+    position:absolute;
+    top: -20px;
+    left: -3%;
+    width: 106%;
+    height:55px;
+    background-image: image-url('60_percent_black_transparency.png');
+    color:white;
+    padding: 10px 40px 35px;
+    font-weight:bold;
+    border-radius:5px 5px 0 0;
+    text-shadow:0 0 8px #000;
+    z-index: 281;
+    text-align: center;
+    text-shadow: 2px 1px black;
+    display: block;
+  }
+  h1.carousel-center-title:before {
+    content:'';
+    position:absolute;
+    bottom:-18px;
+    left:0;
+    border-top:solid 10px #191919;
+    border-right:solid 10px #191919;
+    border-bottom:solid 10px transparent;
+    border-left:solid 10px transparent;
+    z-index: -99
+  }
+  h1.carousel-center-title:after {
+    content:'';
+    position:absolute;
+    bottom:-18px;
+    right:0;
+    border-top:solid 10px #191919;
+    border-right:solid 10px transparent;
+    border-bottom:solid 10px transparent;
+    border-left:solid 10px #191919;
+  }
+}
+.carousel-button {
+  position: absolute;
+  line-height: 450px;
+  display: table-cell;
+  vertical-align: middle
+}
+a#prev { left: 0 }
+a#next { right: 0 }
+#roundabout-carousel .fa {
+  color: black;
+  position: absolute;
+  display: block;
+  height: 10%;
+  top: 45%;
+  text-shadow: 1px 1px 2px white;
+}
+.fa-angle-left {
+  left: -55%;
+}
+.fa-angle-right {
+  right: -55%;
 }
 /*-------------------------------------------------- End Carousel ---------------------------------------------- */
 
 
 
-h1.carousel-center-title {
-    position: absolute;
-    color: white;
-    text-shadow: 1px 1px black;
-    top: 0;
-    left: 0;
-    margin: 0 auto;
-    width: 100%;
-    text-align: center;
-    background-image: image-url('60_percent_black_transparency.png');
-    padding: 10px 0;
 
-    border-radius: 0 0 8px 8px;
-    display: block;
-    z-index: 3;
 
-}
+
 .mobile_navbar {
   .navbar-brand, .pull-none {
     float: none;
@@ -451,6 +526,10 @@ h1.carousel-center-title {
 /*-------------------------------------------------- Start Baked Goods Page ---------------------------------------------- */
 
 .static_pages_baked_goods {
+  h2 { 
+    font-family: 'poiret one', sans-serif;
+    font-weight: bold
+  }
   .thumbnail {
     background-color: lighten($yellow,15%);
     overflow: hidden;
@@ -466,3 +545,5 @@ h1.carousel-center-title {
   a:hover {text-decoration: none}
 }
 /*-------------------------------------------------- End Baked Goods Page ---------------------------------------------- */
+
+

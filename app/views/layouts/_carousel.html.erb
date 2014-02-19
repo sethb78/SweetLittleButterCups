@@ -1,52 +1,18 @@
-    
-    <div id="wrapper" class="hidden-xs">
-    <div id="carousel-left">
-    <%= image_tag(@carousel_slides.last.image, width: "450", height: "337") %>
-    <% @carousel_slides[0..@carousel_slides.length-2].each do |slide| %>
-        <%= image_tag(slide.image, width: "450", height: "337") %>
-    <% end %>
-    </div>
-    <div id="carousel-center">
-    <% @carousel_slides.each do |slide| %>
-    
-    <%= image_tag(slide.image, width: "550", height: "412.5", id: "carousel-center-slide", data: {slide: slide.title} ) %>
-    <% end %>
+    <ul id="roundabout-carousel">
 
-    </div>
-    <div id="carousel-right">
-    <% @carousel_slides[1..@carousel_slides.length-1].each do |slide| %>
-        <%= image_tag(slide.image, width: "450", height: "337") %>
-    <% end %>
-    <%= image_tag(@carousel_slides.first.image, width: "450", height: "337") %>
-
-    </div>
-    <a id="prev" href="#">&lsaquo;</a>
-    <a id="next" href="#">&rsaquo;</a>
-    <h1 class="carousel-center-title"></h1>
-
-    </div>
-    
-
-<!-- Carousel with captions -->
-<div class="carousel slide bs-docs-carousel-example visible-xs mobile_carousel" id="carousel-example-generic2">
-
-  <div class="carousel-inner">
      <% @carousel_slides.each do |slide| %>
-        <div class="item">
+    
+    <li><%= image_tag(slide.image) %>    <h1 class="carousel-center-title"><%= slide.title %></h1>
+</li>
+    <% end %>
 
-    <%= image_tag(slide.image, id: "carousel-center-slide", data: {slide: slide.title} ) %>
+<%= link_to "#", id: "previous" do %>
+ <i class="fa fa-angle-left fa-3x"></i> 
+ <% end %>
+<%= link_to "#", id: "next" do %>
+ <i class="fa fa-angle-right fa-3x"></i> 
+ <% end %>
+ </ul> 
 
-        <h1 class="carousel-center-title"><%= slide.title %></h1>
 
-    </div>
-        <% end %>
-   
-     
-  </div>
-  <%= link_to "#carousel-example-generic2", "data-slide"=> "prev", class: "left carousel-control" do %>
-    <span class="icon-prev"></span>
-  <% end %>
-<%= link_to "#carousel-example-generic2", "data-slide"=> "next", class: "right carousel-control" do %>
-    <span class="icon-next"></span>
-  <% end %>
-</div>
+  
