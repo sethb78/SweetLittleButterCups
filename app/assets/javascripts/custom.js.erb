@@ -85,6 +85,11 @@ $('.header-contact-info').css("width", NavbarWidth );
         if (cur_height < max_height) {
             $(this).css("margin-top",  Math.floor((max_height - cur_height)/2)).css("margin-bottom", (max_height - cur_height)/2);
         }            
+        else { 
+          $('.static_pages_baked_goods .col-lg-4').css("height", $(this).parent('.thumbnail').parent('.col-lg-4').height());
+          $('.static_pages_baked_goods .col-md-6').css("height", $(this).parent('.thumbnail').parent('.col-md-6').height());
+
+        }
         if ( $(window).width() < 769) { 
             $('.col-sm-12 h2').css({"height": max_height, "display": "table-cell", "vertical-align": "middle", "margin-top": "0", "padding-left": "2px"});
         }
