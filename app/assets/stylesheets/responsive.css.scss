@@ -125,7 +125,14 @@
 
 /*-------------------------------------------------- Start Footer---------------------------------------------- */
 @media(min-width: 769px){
-    footer .web-designer { margin-top: 50px }
+    footer {
+        .navbar { margin-bottom: -20px }
+        padding-top: 20px;
+        .web-designer { margin-top: 100px }
+    }
+    .left_footer_column {
+        margin-top: 20px;
+    }
 }
 /*-------------------------------------------------- End Footer---------------------------------------------- */
 
