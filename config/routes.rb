@@ -8,6 +8,11 @@ match '/faq', to: 'static_pages#faq', via: 'get'
   match '/about', to: 'static_pages#about', via: 'get'
   match '/contact', to: 'messages#new', via: 'get'
   match '/baked_goods', to: 'static_pages#baked_goods', via: 'get'
+    match '/paper_goods', to: 'static_pages#paper_goods', via: 'get'
+  match '/party_favors', to: 'static_pages#party_favors', via: 'get'
+    match '/events', to: 'static_pages#events', via: 'get'
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

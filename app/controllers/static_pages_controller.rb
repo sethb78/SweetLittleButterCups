@@ -3,14 +3,24 @@ class StaticPagesController < ApplicationController
     @message = Message.new
   end
 
-  def faq
-  end
+
 
   def contact
   end
 
   def about
   end
+
   def baked_goods
   end
+
+  def events
+  end
+
+  def party_favors
+  end
+
+  def paper_goods
+  end
+
 end
